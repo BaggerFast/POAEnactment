@@ -24,7 +24,9 @@ namespace PAOWinForms
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            var form = new Form2();
+            form.ShowDialog();
+            Console.WriteLine(1231);
         }
 
         private void groupBox2_Enter(object sender, EventArgs e)
@@ -87,14 +89,30 @@ namespace PAOWinForms
 
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void dataGridView1_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
         {
 
         }
 
-        private void dataGridView1_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
+        private void Form1_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            var form = new Form3();
+            form.ShowDialog();
+        }
+
+        private void textBox9_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+        {
+            var d = dateTimePicker1.Value;
         }
     }
 }

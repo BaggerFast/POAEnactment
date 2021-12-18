@@ -2,7 +2,8 @@
 
 namespace PAOCore
 {
-    public class Class1
-    {
+    class Data
+    { 
+
     }
 }
