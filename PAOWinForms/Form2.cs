@@ -15,61 +15,67 @@ namespace PAOWinForms
         public Form2()
         {
             InitializeComponent();
+
+            this.clientInn.Text = Data.clientInn;
+            this.clientKpp.Text = Data.clientKpp;
+            this.lastName.Text = Data.firstName;
+            this.firstName.Text = Data.lastName;
+            this.clientName.Text = Data.clientName;
+            this.middleName.Text = Data.middleName;
+            this.index.Text = Data.index;
+            this.codeRegion.Text = Data.codeRegion;
+            this.apartment.Text = Data.apartment;
+            this.street.Text = Data.street;
+            this.build.Text = Data.build;
+            this.housing.Text = Data.housing;
+            this.district.Text = Data.district;
+            this.settlement.Text = Data.settlement;
+            this.city.Text = Data.city;
+            this.clientBasedOn.Text = Data.clientBasedOn;
         }
 
-        private void textBox8_TextChanged(object sender, EventArgs e)
+        protected override void OnClosing(CancelEventArgs e)
         {
-
+            Data.clientInn = this.clientInn.Text;
+            Data.clientKpp = this.clientKpp.Text;
+            Data.firstName = this.lastName.Text;
+            Data.lastName = this.firstName.Text;
+            Data.clientName = this.clientName.Text;
+            Data.middleName = this.middleName.Text;
+            Data.index = this.index.Text;
+            Data.codeRegion = this.codeRegion.Text;
+            Data.apartment = this.apartment.Text;
+            Data.street = this.street.Text;
+            Data.build = this.build.Text;
+            Data.housing = this.housing.Text;
+            Data.district = this.district.Text;
+            Data.settlement = this.settlement.Text;
+            Data.city = this.city.Text;
         }
 
-        private void groupBox3_Enter(object sender, EventArgs e)
+        private void radioSettlement_CheckedChanged(object sender, EventArgs e)
         {
-
+            syncRadioAndText(sender, ref this.settlement);
         }
 
-        private void groupBox1_Enter(object sender, EventArgs e)
+        private void radioCity_CheckedChanged(object sender, EventArgs e)
         {
-
+            syncRadioAndText(sender, ref this.city);
         }
 
-        private void label10_Click(object sender, EventArgs e)
+        private void syncRadioAndText(object sender, ref TextBox text)
         {
-
+            RadioButton btn = (RadioButton)sender;
+            text.Enabled = btn.Checked;
+            if (!text.Enabled)
+                text.Text = "";
         }
 
-        private void label2_Click(object sender, EventArgs e)
+        private void inn_Validating(object sender, CancelEventArgs e)
         {
-
-        }
-
-        private void label6_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label9_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void groupBox3_Enter_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label19_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox10_TextChanged(object sender, EventArgs e)
-        {
-
+            MessageBox.Show("dawdadad");
+            if (clientInn.Text != "something")
+                e.Cancel = true;
         }
     }
 }

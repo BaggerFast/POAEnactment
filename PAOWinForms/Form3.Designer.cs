@@ -66,7 +66,6 @@ namespace PAOWinForms
             this.groupBox1.TabIndex = 29;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "ФИО";
-            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // label3
             // 
@@ -135,7 +134,6 @@ namespace PAOWinForms
             this.groupBox2.TabIndex = 30;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Паспортные данные";
-            this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
             // 
             // label4
             // 
@@ -208,7 +206,6 @@ namespace PAOWinForms
             this.label18.Size = new System.Drawing.Size(79, 13);
             this.label18.TabIndex = 36;
             this.label18.Text = "Место выдачи";
-            this.label18.Click += new System.EventHandler(this.label18_Click);
             // 
             // groupBox3
             // 
