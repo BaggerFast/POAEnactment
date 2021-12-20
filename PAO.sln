@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PAOTests", "PAOTests\PAOTes
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PAOWinForms", "PAOWinForms\PAOWinForms.csproj", "{6AB4B476-724F-4AA7-BD3C-7EDAA1EF79A7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PAOCore", "PAOCore\PAOCore.csproj", "{60F2D963-39DA-4DC5-9D8E-8CF2FB3472DA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PAOCore", "PAOCore\PAOCore.csproj", "{60F2D963-39DA-4DC5-9D8E-8CF2FB3472DA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

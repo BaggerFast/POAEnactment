@@ -103,7 +103,6 @@ namespace PAOWinForms
             resources.ApplyResources(this.clientInn, "clientInn");
             this.clientInn.Name = "clientInn";
             this.clientInn.ShortcutsEnabled = false;
-            this.clientInn.Validating += new System.ComponentModel.CancelEventHandler(this.inn_Validating);
             // 
             // groupBox1
             // 

@@ -1,12 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using PAOCore;
 
 namespace PAOWinForms
 {
@@ -16,41 +11,41 @@ namespace PAOWinForms
         {
             InitializeComponent();
 
-            this.clientInn.Text = Data.clientInn;
-            this.clientKpp.Text = Data.clientKpp;
-            this.lastName.Text = Data.firstName;
-            this.firstName.Text = Data.lastName;
-            this.clientName.Text = Data.clientName;
-            this.middleName.Text = Data.middleName;
-            this.index.Text = Data.index;
-            this.codeRegion.Text = Data.codeRegion;
-            this.apartment.Text = Data.apartment;
-            this.street.Text = Data.street;
-            this.build.Text = Data.build;
-            this.housing.Text = Data.housing;
-            this.district.Text = Data.district;
-            this.settlement.Text = Data.settlement;
-            this.city.Text = Data.city;
-            this.clientBasedOn.Text = Data.clientBasedOn;
+            clientInn.Text = Data.ClientInn;
+            clientKpp.Text = Data.ClientKpp;
+            lastName.Text = Data.FirstName;
+            firstName.Text = Data.LastName;
+            clientName.Text = Data.ClientName;
+            middleName.Text = Data.MiddleName;
+            index.Text = Data.Index;
+            codeRegion.Text = Data.CodeRegion;
+            apartment.Text = Data.Apartment;
+            street.Text = Data.Street;
+            build.Text = Data.Build;
+            housing.Text = Data.Housing;
+            district.Text = Data.District;
+            settlement.Text = Data.Settlement;
+            city.Text = Data.City;
+            clientBasedOn.Text = Data.ClientBasedOn;
         }
 
         protected override void OnClosing(CancelEventArgs e)
         {
-            Data.clientInn = this.clientInn.Text;
-            Data.clientKpp = this.clientKpp.Text;
-            Data.firstName = this.lastName.Text;
-            Data.lastName = this.firstName.Text;
-            Data.clientName = this.clientName.Text;
-            Data.middleName = this.middleName.Text;
-            Data.index = this.index.Text;
-            Data.codeRegion = this.codeRegion.Text;
-            Data.apartment = this.apartment.Text;
-            Data.street = this.street.Text;
-            Data.build = this.build.Text;
-            Data.housing = this.housing.Text;
-            Data.district = this.district.Text;
-            Data.settlement = this.settlement.Text;
-            Data.city = this.city.Text;
+            Data.ClientInn = clientInn.Text;
+            Data.ClientKpp = clientKpp.Text;
+            Data.FirstName = lastName.Text;
+            Data.LastName = firstName.Text;
+            Data.ClientName = clientName.Text;
+            Data.MiddleName = middleName.Text;
+            Data.Index = index.Text;
+            Data.CodeRegion = codeRegion.Text;
+            Data.Apartment = apartment.Text;
+            Data.Street = street.Text;
+            Data.Build = build.Text;
+            Data.Housing = housing.Text;
+            Data.District = district.Text;
+            Data.Settlement = settlement.Text;
+            Data.City = city.Text;
         }
 
         private void radioSettlement_CheckedChanged(object sender, EventArgs e)
@@ -69,13 +64,6 @@ namespace PAOWinForms
             text.Enabled = btn.Checked;
             if (!text.Enabled)
                 text.Text = "";
-        }
-
-        private void inn_Validating(object sender, CancelEventArgs e)
-        {
-            MessageBox.Show("dawdadad");
-            if (clientInn.Text != "something")
-                e.Cancel = true;
         }
     }
 }

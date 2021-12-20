@@ -1,6 +1,6 @@
 ﻿using System.Xml.Serialization;
 
-namespace PAOWinForms
+namespace PAOCore
 {
     [XmlRoot("Authority")]
     public class Xml
@@ -19,18 +19,18 @@ namespace PAOWinForms
 
     public class AuthorityProperties
     {
-        public string AuthorityNo { get { return Data.authorityNo; } set { } }
+        public string AuthorityNo { get { return Data.AuthorityNo; } set { } }
 
-        public string AuthorityDate { get { return Data.authorityDate; } set { } }
+        public string AuthorityDate { get { return Data.AuthorityDate; } set { } }
     }
 
     public class AuthorityHeader
     {
-        public string ClientName { get { return Data.clientName; } set { } }
+        public string ClientName { get { return Data.ClientName; } set { } }
 
-        public string ClientINN { get { return Data.clientInn; } set { } }
+        public string ClientINN { get { return Data.ClientInn; } set { } }
 
-        public string ClientKPP { get { return Data.clientKpp; } set { } }
+        public string ClientKPP { get { return Data.ClientKpp; } set { } }
 
         [XmlElement("ClientAddress")]
         public ClientAddress Address { get { return new ClientAddress(); } set { } }
@@ -38,41 +38,41 @@ namespace PAOWinForms
         [XmlElement("ClientPerson")]
         public ClientPerson Person { get { return new ClientPerson(); } set { } }
 
-        public string ClientBasedOn { get { return Data.clientBasedOn; } set { } }
+        public string ClientBasedOn { get { return Data.ClientBasedOn; } set { } }
     }
 
     public class ClientPerson
     {
 
-        public string LastName { get { return Data.lastName; } set { } }
+        public string LastName { get { return Data.LastName; } set { } }
 
-        public string FirstName { get { return Data.firstName; } set { } }
+        public string FirstName { get { return Data.FirstName; } set { } }
 
-        public string MiddleName { get { return Data.middleName; } set { } }
+        public string MiddleName { get { return Data.MiddleName; } set { } }
     }
 
     public class ClientAddress
     {
-        public string Index { get { return Data.index; } set { } }
+        public string Index { get { return Data.Index; } set { } }
 
-        public string CodeRegion { get { return Data.codeRegion; } set { } }
+        public string CodeRegion { get { return Data.CodeRegion; } set { } }
 
-        public string District { get { return Data.district; } set { } }
+        public string District { get { return Data.District; } set { } }
 
-        public string Street { get { return Data.street; } set { } }
+        public string Street { get { return Data.Street; } set { } }
 
-        public string Build { get { return Data.build; } set { } }
+        public string Build { get { return Data.Build; } set { } }
 
-        public string Housing { get { return Data.housing; } set { } }
+        public string Housing { get { return Data.Housing; } set { } }
 
-        public string Apartment { get { return Data.apartment; } set { } }
+        public string Apartment { get { return Data.Apartment; } set { } }
     }
 
     public class AuthorityFooter
     {
         public string FooterText1 { get { return "Доверенность выдана без права передоверия сроком до"; } set { } }
 
-        public string DateEndOfValidity { get { return Data.numberEnd; } set { } }
+        public string DateEndOfValidity { get { return Data.NumberEnd; } set { } }
 
         public string FooterText2 { get { return "(Включительно)"; } set { } }
     }

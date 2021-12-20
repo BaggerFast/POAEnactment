@@ -1,6 +1,6 @@
 ﻿namespace PAOWinForms
 {
-    partial class Form1
+    partial class FormMain
     {
 
         private System.ComponentModel.IContainer components = null;
@@ -23,10 +23,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            this.button1 = new System.Windows.Forms.Button();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMain));
+            this.edit = new System.Windows.Forms.Button();
             this.createXML = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.numberEnd = new System.Windows.Forms.DateTimePicker();
             this.authorityDate = new System.Windows.Forms.DateTimePicker();
             this.authorityNo = new System.Windows.Forms.TextBox();
             this.label18 = new System.Windows.Forms.Label();
@@ -60,7 +61,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.clientName = new System.Windows.Forms.TextBox();
             this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            this.AddUp = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.Фамилия = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -70,18 +71,17 @@
             this.МестоВыдачи = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.СерияНомер = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.НомерТелефона = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.numberEnd = new System.Windows.Forms.DateTimePicker();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
-            // button1
+            // edit
             // 
-            resources.ApplyResources(this.button1, "button1");
-            this.button1.Name = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            resources.ApplyResources(this.edit, "edit");
+            this.edit.Name = "edit";
+            this.edit.UseVisualStyleBackColor = true;
+            this.edit.Click += new System.EventHandler(this.edit_Click);
             // 
             // createXML
             // 
@@ -110,6 +110,15 @@
             resources.ApplyResources(this.groupBox2, "groupBox2");
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.TabStop = false;
+            // 
+            // numberEnd
+            // 
+            this.numberEnd.Checked = false;
+            resources.ApplyResources(this.numberEnd, "numberEnd");
+            this.numberEnd.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.numberEnd.MaxDate = new System.DateTime(2050, 2, 1, 0, 0, 0, 0);
+            this.numberEnd.MinDate = new System.DateTime(2000, 2, 1, 0, 0, 0, 0);
+            this.numberEnd.Name = "numberEnd";
             // 
             // authorityDate
             // 
@@ -313,12 +322,12 @@
             this.button3.Name = "button3";
             this.button3.UseVisualStyleBackColor = true;
             // 
-            // button4
+            // AddUp
             // 
-            resources.ApplyResources(this.button4, "button4");
-            this.button4.Name = "button4";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
+            resources.ApplyResources(this.AddUp, "AddUp");
+            this.AddUp.Name = "AddUp";
+            this.AddUp.UseVisualStyleBackColor = true;
+            this.AddUp.Click += new System.EventHandler(this.AddUp_Click);
             // 
             // button5
             // 
@@ -379,28 +388,19 @@
             resources.ApplyResources(this.НомерТелефона, "НомерТелефона");
             this.НомерТелефона.Name = "НомерТелефона";
             // 
-            // numberEnd
-            // 
-            this.numberEnd.Checked = false;
-            resources.ApplyResources(this.numberEnd, "numberEnd");
-            this.numberEnd.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.numberEnd.MaxDate = new System.DateTime(2050, 2, 1, 0, 0, 0, 0);
-            this.numberEnd.MinDate = new System.DateTime(2000, 2, 1, 0, 0, 0, 0);
-            this.numberEnd.Name = "numberEnd";
-            // 
-            // Form1
+            // FormMain
             // 
             resources.ApplyResources(this, "$this");
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.button3);
-            this.Controls.Add(this.button4);
+            this.Controls.Add(this.AddUp);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.createXML);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.edit);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.MaximizeBox = false;
-            this.Name = "Form1";
+            this.Name = "FormMain";
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox3.ResumeLayout(false);
@@ -411,7 +411,7 @@
         }
 
         #endregion
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button edit;
         private System.Windows.Forms.Button createXML;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label label1;
@@ -441,7 +441,7 @@
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.TextBox director;
         private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button AddUp;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Фамилия;
