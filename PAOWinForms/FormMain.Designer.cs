@@ -81,14 +81,14 @@
             resources.ApplyResources(this.edit, "edit");
             this.edit.Name = "edit";
             this.edit.UseVisualStyleBackColor = true;
-            this.edit.Click += new System.EventHandler(this.edit_Click);
+            this.edit.Click += new System.EventHandler(this.Edit_Click);
             // 
             // createXML
             // 
             resources.ApplyResources(this.createXML, "createXML");
             this.createXML.Name = "createXML";
             this.createXML.UseVisualStyleBackColor = true;
-            this.createXML.Click += new System.EventHandler(this.createXML_Click);
+            this.createXML.Click += new System.EventHandler(this.CreateXML_Click);
             // 
             // groupBox2
             // 

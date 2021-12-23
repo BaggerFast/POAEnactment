@@ -1,7 +1,7 @@
 ﻿
 namespace PAOWinForms
 {
-    partial class Form2
+    partial class FormBaseInfoEdit
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@ namespace PAOWinForms
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form2));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormBaseInfoEdit));
             this.label1 = new System.Windows.Forms.Label();
             this.clientName = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
@@ -65,8 +65,10 @@ namespace PAOWinForms
             this.label18 = new System.Windows.Forms.Label();
             this.textBox18 = new System.Windows.Forms.TextBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.clientBasedOn = new System.Windows.Forms.ComboBox();
             this.label20 = new System.Windows.Forms.Label();
+            this.clientBasedOn = new System.Windows.Forms.ComboBox();
+            this.save = new System.Windows.Forms.Button();
+            this.cancel = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -91,6 +93,7 @@ namespace PAOWinForms
             // 
             resources.ApplyResources(this.clientKpp, "clientKpp");
             this.clientKpp.Name = "clientKpp";
+            this.clientKpp.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBox_IntParser);
             // 
             // label11
             // 
@@ -103,6 +106,7 @@ namespace PAOWinForms
             resources.ApplyResources(this.clientInn, "clientInn");
             this.clientInn.Name = "clientInn";
             this.clientInn.ShortcutsEnabled = false;
+            this.clientInn.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBox_IntParser);
             // 
             // groupBox1
             // 
@@ -177,7 +181,7 @@ namespace PAOWinForms
             this.radioCity.Name = "radioCity";
             this.radioCity.TabStop = true;
             this.radioCity.UseVisualStyleBackColor = true;
-            this.radioCity.CheckedChanged += new System.EventHandler(this.radioCity_CheckedChanged);
+            this.radioCity.CheckedChanged += new System.EventHandler(this.RadioCity_CheckedChanged);
             // 
             // settlement
             // 
@@ -194,17 +198,19 @@ namespace PAOWinForms
             resources.ApplyResources(this.radioSettlement, "radioSettlement");
             this.radioSettlement.Name = "radioSettlement";
             this.radioSettlement.UseVisualStyleBackColor = true;
-            this.radioSettlement.CheckedChanged += new System.EventHandler(this.radioSettlement_CheckedChanged);
+            this.radioSettlement.CheckedChanged += new System.EventHandler(this.RadioSettlement_CheckedChanged);
             // 
             // apartment
             // 
             resources.ApplyResources(this.apartment, "apartment");
             this.apartment.Name = "apartment";
+            this.apartment.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBox_IntParser);
             // 
             // housing
             // 
             resources.ApplyResources(this.housing, "housing");
             this.housing.Name = "housing";
+            this.housing.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBox_IntParser);
             // 
             // build
             // 
@@ -255,6 +261,7 @@ namespace PAOWinForms
             // 
             resources.ApplyResources(this.codeRegion, "codeRegion");
             this.codeRegion.Name = "codeRegion";
+            this.codeRegion.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBox_IntParser);
             // 
             // label6
             // 
@@ -265,6 +272,7 @@ namespace PAOWinForms
             // 
             resources.ApplyResources(this.index, "index");
             this.index.Name = "index";
+            this.index.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBox_IntParser);
             // 
             // label18
             // 
@@ -279,11 +287,16 @@ namespace PAOWinForms
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.textBox18);
-            this.groupBox3.Controls.Add(this.label18);
+            this.groupBox3.Controls.Add(this.label20);
+            this.groupBox3.Controls.Add(this.clientBasedOn);
             resources.ApplyResources(this.groupBox3, "groupBox3");
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.TabStop = false;
+            // 
+            // label20
+            // 
+            resources.ApplyResources(this.label20, "label20");
+            this.label20.Name = "label20";
             // 
             // clientBasedOn
             // 
@@ -299,17 +312,28 @@ namespace PAOWinForms
             this.clientBasedOn.Name = "clientBasedOn";
             this.clientBasedOn.Tag = "";
             // 
-            // label20
+            // save
             // 
-            resources.ApplyResources(this.label20, "label20");
-            this.label20.Name = "label20";
+            resources.ApplyResources(this.save, "save");
+            this.save.Name = "save";
+            this.save.UseVisualStyleBackColor = true;
+            this.save.Click += new System.EventHandler(this.Save_Click);
             // 
-            // Form2
+            // cancel
+            // 
+            resources.ApplyResources(this.cancel, "cancel");
+            this.cancel.Name = "cancel";
+            this.cancel.UseVisualStyleBackColor = true;
+            this.cancel.Click += new System.EventHandler(this.Сancel_Click);
+            // 
+            // FormBaseInfoEdit
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.clientBasedOn);
-            this.Controls.Add(this.label20);
+            this.Controls.Add(this.cancel);
+            this.Controls.Add(this.save);
+            this.Controls.Add(this.textBox18);
+            this.Controls.Add(this.label18);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -322,7 +346,7 @@ namespace PAOWinForms
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "Form2";
+            this.Name = "FormBaseInfoEdit";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
@@ -373,5 +397,7 @@ namespace PAOWinForms
         private System.Windows.Forms.RadioButton radioSettlement;
         private System.Windows.Forms.TextBox settlement;
         private System.Windows.Forms.RadioButton radioCity;
+        private System.Windows.Forms.Button save;
+        private System.Windows.Forms.Button cancel;
     }
 }

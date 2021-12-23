@@ -1,4 +1,7 @@
-﻿using System;
+﻿// This is an independent project of an individual developer. Dear PVS-Studio, please check it.
+// PVS-Studio Static Code Analyzer for C, C++, C#, and Java: http://www.viva64.com/
+
+using System;
 using System.IO;
 using System.Windows.Forms;
 using System.Xml.Serialization;
@@ -9,30 +12,32 @@ namespace PAOWinForms
 {
     public partial class FormMain : Form
     {
+        private Data data = Data.Instance;
+
         public FormMain()
         {
             InitializeComponent();
         }
 
-        private void edit_Click(object sender, EventArgs e)
+        private void Edit_Click(object sender, EventArgs e)
         {
-            Form2 form = new Form2();
+            FormBaseInfoEdit form = new FormBaseInfoEdit();
 
             form.ShowDialog();
 
-            clientKpp.Text = Data.ClientKpp;
-            clientInn.Text = Data.ClientInn;
-            director.Text = Data.Director;
-            clientName.Text = Data.ClientName;
-            index.Text = Data.Index;
-            codeRegion.Text = Data.CodeRegion;
-            apartment.Text = Data.Apartment;
-            street.Text = Data.Street;
-            build.Text = Data.Build;
-            housing.Text = Data.Housing;
-            district.Text = Data.District;
-            settlement.Text = Data.Settlement;
-            city.Text = Data.City;
+            clientKpp.Text = data.ClientKpp;
+            clientInn.Text = data.ClientInn;
+            director.Text = data.Director;
+            clientName.Text = data.ClientName;
+            index.Text = data.Index;
+            codeRegion.Text = data.CodeRegion;
+            apartment.Text = data.Apartment;
+            street.Text = data.Street;
+            build.Text = data.Build;
+            housing.Text = data.Housing;
+            district.Text = data.District;
+            settlement.Text = data.Settlement;
+            city.Text = data.City;
         }
 
         private void AddUp_Click(object sender, EventArgs e)
@@ -41,12 +46,19 @@ namespace PAOWinForms
             form.ShowDialog();
         }
 
-        private void createXML_Click(object sender, EventArgs e)
+        private void CreateXML_Click(object sender, EventArgs e)
         {
-            Data.AuthorityDate = authorityDate.Text;
-            Data.NumberEnd = numberEnd.Text;
-            Data.AuthorityNo = authorityNo.Text;
-
+            try
+            {
+                data.AuthorityDate = authorityDate.Text;
+                data.NumberEnd = numberEnd.Text;
+                data.AuthorityNo = authorityNo.Text;
+            }
+            catch (EmptyFieldException error)
+            {
+                MessageBox.Show(error.Message);
+                return;
+            }
 
             SaveFileDialog saveDialog = new SaveFileDialog();
             saveDialog.Filter = "Extensible Markup Language|*.xml";
