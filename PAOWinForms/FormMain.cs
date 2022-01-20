@@ -48,17 +48,10 @@ namespace PAOWinForms
 
         private void CreateXML_Click(object sender, EventArgs e)
         {
-            try
-            {
-                data.AuthorityDate = authorityDate.Text;
-                data.NumberEnd = numberEnd.Text;
-                data.AuthorityNo = authorityNo.Text;
-            }
-            catch (EmptyFieldException error)
-            {
-                MessageBox.Show(error.Message);
-                return;
-            }
+            data.AuthorityDate = authorityDate.Text;
+            data.NumberEnd = numberEnd.Text;
+            data.AuthorityNo = authorityNo.Text;
+        
 
             SaveFileDialog saveDialog = new SaveFileDialog();
             saveDialog.Filter = "Extensible Markup Language|*.xml";
@@ -75,6 +68,16 @@ namespace PAOWinForms
                 MessageBox.Show("ready");
             }
 
+
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void FormMain_Load(object sender, EventArgs e)
+        {
 
         }
     }

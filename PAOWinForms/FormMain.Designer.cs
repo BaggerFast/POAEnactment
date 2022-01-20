@@ -24,6 +24,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMain));
+            System.Windows.Forms.DataGridView UpGrid;
             this.edit = new System.Windows.Forms.Button();
             this.createXML = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -63,7 +64,7 @@
             this.button3 = new System.Windows.Forms.Button();
             this.AddUp = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.Number = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Фамилия = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Имя = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Отчество = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -71,9 +72,10 @@
             this.МестоВыдачи = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.СерияНомер = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.НомерТелефона = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            UpGrid = new System.Windows.Forms.DataGridView();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(UpGrid)).BeginInit();
             this.SuspendLayout();
             // 
             // edit
@@ -335,13 +337,16 @@
             this.button5.Name = "button5";
             this.button5.UseVisualStyleBackColor = true;
             // 
-            // dataGridView1
+            // UpGrid
             // 
-            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
-            this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.dataGridView1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            UpGrid.AllowUserToAddRows = false;
+            UpGrid.AllowUserToDeleteRows = false;
+            UpGrid.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
+            UpGrid.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            UpGrid.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            UpGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            UpGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Number,
             this.Фамилия,
             this.Имя,
             this.Отчество,
@@ -349,49 +354,68 @@
             this.МестоВыдачи,
             this.СерияНомер,
             this.НомерТелефона});
-            this.dataGridView1.GridColor = System.Drawing.SystemColors.ButtonFace;
-            resources.ApplyResources(this.dataGridView1, "dataGridView1");
-            this.dataGridView1.Name = "dataGridView1";
+            UpGrid.GridColor = System.Drawing.SystemColors.ButtonFace;
+            resources.ApplyResources(UpGrid, "UpGrid");
+            UpGrid.MultiSelect = false;
+            UpGrid.Name = "UpGrid";
+            UpGrid.ReadOnly = true;
+            UpGrid.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            UpGrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            // 
+            // Number
+            // 
+            this.Number.FillWeight = 40F;
+            resources.ApplyResources(this.Number, "Number");
+            this.Number.Name = "Number";
+            this.Number.ReadOnly = true;
+            this.Number.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             // 
             // Фамилия
             // 
             resources.ApplyResources(this.Фамилия, "Фамилия");
             this.Фамилия.Name = "Фамилия";
+            this.Фамилия.ReadOnly = true;
             // 
             // Имя
             // 
             resources.ApplyResources(this.Имя, "Имя");
             this.Имя.Name = "Имя";
+            this.Имя.ReadOnly = true;
             // 
             // Отчество
             // 
             resources.ApplyResources(this.Отчество, "Отчество");
             this.Отчество.Name = "Отчество";
+            this.Отчество.ReadOnly = true;
             // 
             // ДатаВыдачи
             // 
             resources.ApplyResources(this.ДатаВыдачи, "ДатаВыдачи");
             this.ДатаВыдачи.Name = "ДатаВыдачи";
+            this.ДатаВыдачи.ReadOnly = true;
             // 
             // МестоВыдачи
             // 
             resources.ApplyResources(this.МестоВыдачи, "МестоВыдачи");
             this.МестоВыдачи.Name = "МестоВыдачи";
+            this.МестоВыдачи.ReadOnly = true;
             // 
             // СерияНомер
             // 
             resources.ApplyResources(this.СерияНомер, "СерияНомер");
             this.СерияНомер.Name = "СерияНомер";
+            this.СерияНомер.ReadOnly = true;
             // 
             // НомерТелефона
             // 
             resources.ApplyResources(this.НомерТелефона, "НомерТелефона");
             this.НомерТелефона.Name = "НомерТелефона";
+            this.НомерТелефона.ReadOnly = true;
             // 
             // FormMain
             // 
             resources.ApplyResources(this, "$this");
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(UpGrid);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.AddUp);
@@ -401,11 +425,12 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.MaximizeBox = false;
             this.Name = "FormMain";
+            this.Load += new System.EventHandler(this.FormMain_Load);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(UpGrid)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -443,14 +468,6 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button AddUp;
         private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Фамилия;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Имя;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Отчество;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ДатаВыдачи;
-        private System.Windows.Forms.DataGridViewTextBoxColumn МестоВыдачи;
-        private System.Windows.Forms.DataGridViewTextBoxColumn СерияНомер;
-        private System.Windows.Forms.DataGridViewTextBoxColumn НомерТелефона;
         private System.Windows.Forms.DateTimePicker authorityDate;
         private System.Windows.Forms.TextBox authorityNo;
         private System.Windows.Forms.Label label18;
@@ -458,5 +475,13 @@
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.TextBox clientKpp;
         private System.Windows.Forms.DateTimePicker numberEnd;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Number;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Фамилия;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Имя;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Отчество;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ДатаВыдачи;
+        private System.Windows.Forms.DataGridViewTextBoxColumn МестоВыдачи;
+        private System.Windows.Forms.DataGridViewTextBoxColumn СерияНомер;
+        private System.Windows.Forms.DataGridViewTextBoxColumn НомерТелефона;
     }
 }

@@ -5,6 +5,8 @@ using System;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
 using PAOCore;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace PAOWinForms
 {
@@ -76,31 +78,34 @@ namespace PAOWinForms
 
         private void Save_Click(object sender, EventArgs e)
         {
-            try
-            {
-                data.ClientName = clientName.Text;
-                data.ClientInn = clientInn.Text;
-                data.ClientKpp = clientKpp.Text;
-                data.LastName = lastName.Text;
-                data.FirstName = firstName.Text;
-                data.MiddleName = middleName.Text;
-                data.Index = index.Text;
-                data.CodeRegion = codeRegion.Text;
-                data.District = district.Text;
-                data.Street = street.Text;
-                data.Build = build.Text;
-                data.Housing = housing.Text;
-                data.Apartment = apartment.Text;
+            data.ClientName = clientName.Text;
+            data.ClientInn = clientInn.Text;
+            data.ClientKpp = clientKpp.Text;
+            data.LastName = lastName.Text;
+            data.FirstName = firstName.Text;
+            data.MiddleName = middleName.Text;
+            data.Index = index.Text;
+            data.CodeRegion = codeRegion.Text;
+            data.District = district.Text;
+            data.Street = street.Text;
+            data.Build = build.Text;
+            data.Housing = housing.Text;
+            data.Apartment = apartment.Text;
+            data.Settlement = settlement.Text;
+            data.City = city.Text;
+            data.ClientBasedOn = clientBasedOn.Text;
 
-                data.Settlement = settlement.Text;
-                data.City = city.Text;
-                data.ClientBasedOn = clientBasedOn.Text;
-                Close();
-            }
-            catch (EmptyFieldException error)
+            var results = new List<ValidationResult>();
+            var context = new ValidationContext(data);
+            if (!Validator.TryValidateObject(data, context, results, true))
             {
-                MessageBox.Show(error.Message);
+                foreach (var error in results)
+                {
+                    MessageBox.Show(error.ErrorMessage);
+                    break;
+                }
             }
+            else Close();
         }
 
         private void Сancel_Click(object sender, EventArgs e)

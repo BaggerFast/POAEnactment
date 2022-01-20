@@ -1515,50 +1515,20 @@
   <data name="&gt;&gt;button5.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <metadata name="Фамилия.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="Имя.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="Отчество.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="ДатаВыдачи.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="МестоВыдачи.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="СерияНомер.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="НомерТелефона.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <data name="dataGridView1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>24, 579</value>
-  </data>
-  <data name="dataGridView1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>252, 72</value>
-  </data>
-  <data name="dataGridView1.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
-  </data>
-  <data name="dataGridView1.Visible" type="System.Boolean, mscorlib">
+  <metadata name="UpGrid.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>False</value>
+  </metadata>
+  <metadata name="Number.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="Number.HeaderText" xml:space="preserve">
+    <value>№ п/п</value>
   </data>
-  <data name="&gt;&gt;dataGridView1.Name" xml:space="preserve">
-    <value>dataGridView1</value>
+  <data name="Number.MinimumWidth" type="System.Int32, mscorlib">
+    <value>20</value>
   </data>
-  <data name="&gt;&gt;dataGridView1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;dataGridView1.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;dataGridView1.ZOrder" xml:space="preserve">
-    <value>0</value>
+  <data name="Number.Width" type="System.Int32, mscorlib">
+    <value>40</value>
   </data>
   <metadata name="Фамилия.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -1566,11 +1536,23 @@
   <data name="Фамилия.HeaderText" xml:space="preserve">
     <value>Фамилия</value>
   </data>
+  <data name="Фамилия.MinimumWidth" type="System.Int32, mscorlib">
+    <value>30</value>
+  </data>
+  <data name="Фамилия.Width" type="System.Int32, mscorlib">
+    <value>90</value>
+  </data>
   <metadata name="Имя.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
   <data name="Имя.HeaderText" xml:space="preserve">
     <value>Имя</value>
+  </data>
+  <data name="Имя.MinimumWidth" type="System.Int32, mscorlib">
+    <value>30</value>
+  </data>
+  <data name="Имя.Width" type="System.Int32, mscorlib">
+    <value>90</value>
   </data>
   <metadata name="Отчество.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -1578,11 +1560,20 @@
   <data name="Отчество.HeaderText" xml:space="preserve">
     <value>Отчество</value>
   </data>
+  <data name="Отчество.MinimumWidth" type="System.Int32, mscorlib">
+    <value>30</value>
+  </data>
+  <data name="Отчество.Width" type="System.Int32, mscorlib">
+    <value>90</value>
+  </data>
   <metadata name="ДатаВыдачи.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
   <data name="ДатаВыдачи.HeaderText" xml:space="preserve">
     <value>Дата выдачи</value>
+  </data>
+  <data name="ДатаВыдачи.Width" type="System.Int32, mscorlib">
+    <value>70</value>
   </data>
   <metadata name="МестоВыдачи.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -1590,17 +1581,47 @@
   <data name="МестоВыдачи.HeaderText" xml:space="preserve">
     <value>Место выдачи</value>
   </data>
+  <data name="МестоВыдачи.Width" type="System.Int32, mscorlib">
+    <value>90</value>
+  </data>
   <metadata name="СерияНомер.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
   <data name="СерияНомер.HeaderText" xml:space="preserve">
     <value>Серия / Номер</value>
   </data>
+  <data name="СерияНомер.Width" type="System.Int32, mscorlib">
+    <value>90</value>
+  </data>
   <metadata name="НомерТелефона.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
   <data name="НомерТелефона.HeaderText" xml:space="preserve">
     <value>Номер телефона</value>
+  </data>
+  <data name="НомерТелефона.Width" type="System.Int32, mscorlib">
+    <value>110</value>
+  </data>
+  <data name="UpGrid.Location" type="System.Drawing.Point, System.Drawing">
+    <value>11, 496</value>
+  </data>
+  <data name="UpGrid.Size" type="System.Drawing.Size, System.Drawing">
+    <value>702, 131</value>
+  </data>
+  <data name="UpGrid.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="&gt;&gt;UpGrid.Name" xml:space="preserve">
+    <value>UpGrid</value>
+  </data>
+  <data name="&gt;&gt;UpGrid.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;UpGrid.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;UpGrid.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -1613,6 +1634,12 @@
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Power Of Attorney</value>
+  </data>
+  <data name="&gt;&gt;Number.Name" xml:space="preserve">
+    <value>Number</value>
+  </data>
+  <data name="&gt;&gt;Number.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;Фамилия.Name" xml:space="preserve">
     <value>Фамилия</value>
