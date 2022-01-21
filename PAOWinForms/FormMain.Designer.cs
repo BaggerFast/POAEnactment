@@ -23,8 +23,16 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMain));
             System.Windows.Forms.DataGridView UpGrid;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMain));
+            this.Number = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Фамилия = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Имя = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Отчество = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ДатаВыдачи = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.МестоВыдачи = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.СерияНомер = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.НомерТелефона = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.edit = new System.Windows.Forms.Button();
             this.createXML = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -64,19 +72,85 @@
             this.button3 = new System.Windows.Forms.Button();
             this.AddUp = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
-            this.Number = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Фамилия = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Имя = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Отчество = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ДатаВыдачи = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.МестоВыдачи = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.СерияНомер = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.НомерТелефона = new System.Windows.Forms.DataGridViewTextBoxColumn();
             UpGrid = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(UpGrid)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(UpGrid)).BeginInit();
             this.SuspendLayout();
+            // 
+            // UpGrid
+            // 
+            UpGrid.AllowUserToAddRows = false;
+            UpGrid.AllowUserToDeleteRows = false;
+            UpGrid.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
+            UpGrid.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            UpGrid.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            UpGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            UpGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Number,
+            this.Фамилия,
+            this.Имя,
+            this.Отчество,
+            this.ДатаВыдачи,
+            this.МестоВыдачи,
+            this.СерияНомер,
+            this.НомерТелефона});
+            UpGrid.GridColor = System.Drawing.SystemColors.ButtonFace;
+            resources.ApplyResources(UpGrid, "UpGrid");
+            UpGrid.MultiSelect = false;
+            UpGrid.Name = "UpGrid";
+            UpGrid.ReadOnly = true;
+            UpGrid.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            // 
+            // Number
+            // 
+            this.Number.FillWeight = 40F;
+            resources.ApplyResources(this.Number, "Number");
+            this.Number.Name = "Number";
+            this.Number.ReadOnly = true;
+            this.Number.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            // 
+            // Фамилия
+            // 
+            resources.ApplyResources(this.Фамилия, "Фамилия");
+            this.Фамилия.Name = "Фамилия";
+            this.Фамилия.ReadOnly = true;
+            // 
+            // Имя
+            // 
+            resources.ApplyResources(this.Имя, "Имя");
+            this.Имя.Name = "Имя";
+            this.Имя.ReadOnly = true;
+            // 
+            // Отчество
+            // 
+            resources.ApplyResources(this.Отчество, "Отчество");
+            this.Отчество.Name = "Отчество";
+            this.Отчество.ReadOnly = true;
+            // 
+            // ДатаВыдачи
+            // 
+            resources.ApplyResources(this.ДатаВыдачи, "ДатаВыдачи");
+            this.ДатаВыдачи.Name = "ДатаВыдачи";
+            this.ДатаВыдачи.ReadOnly = true;
+            // 
+            // МестоВыдачи
+            // 
+            resources.ApplyResources(this.МестоВыдачи, "МестоВыдачи");
+            this.МестоВыдачи.Name = "МестоВыдачи";
+            this.МестоВыдачи.ReadOnly = true;
+            // 
+            // СерияНомер
+            // 
+            resources.ApplyResources(this.СерияНомер, "СерияНомер");
+            this.СерияНомер.Name = "СерияНомер";
+            this.СерияНомер.ReadOnly = true;
+            // 
+            // НомерТелефона
+            // 
+            resources.ApplyResources(this.НомерТелефона, "НомерТелефона");
+            this.НомерТелефона.Name = "НомерТелефона";
+            this.НомерТелефона.ReadOnly = true;
             // 
             // edit
             // 
@@ -135,6 +209,7 @@
             // 
             resources.ApplyResources(this.authorityNo, "authorityNo");
             this.authorityNo.Name = "authorityNo";
+            this.authorityNo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBox_IntParser);
             // 
             // label18
             // 
@@ -337,81 +412,6 @@
             this.button5.Name = "button5";
             this.button5.UseVisualStyleBackColor = true;
             // 
-            // UpGrid
-            // 
-            UpGrid.AllowUserToAddRows = false;
-            UpGrid.AllowUserToDeleteRows = false;
-            UpGrid.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
-            UpGrid.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            UpGrid.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-            UpGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            UpGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Number,
-            this.Фамилия,
-            this.Имя,
-            this.Отчество,
-            this.ДатаВыдачи,
-            this.МестоВыдачи,
-            this.СерияНомер,
-            this.НомерТелефона});
-            UpGrid.GridColor = System.Drawing.SystemColors.ButtonFace;
-            resources.ApplyResources(UpGrid, "UpGrid");
-            UpGrid.MultiSelect = false;
-            UpGrid.Name = "UpGrid";
-            UpGrid.ReadOnly = true;
-            UpGrid.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            UpGrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            // 
-            // Number
-            // 
-            this.Number.FillWeight = 40F;
-            resources.ApplyResources(this.Number, "Number");
-            this.Number.Name = "Number";
-            this.Number.ReadOnly = true;
-            this.Number.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            // 
-            // Фамилия
-            // 
-            resources.ApplyResources(this.Фамилия, "Фамилия");
-            this.Фамилия.Name = "Фамилия";
-            this.Фамилия.ReadOnly = true;
-            // 
-            // Имя
-            // 
-            resources.ApplyResources(this.Имя, "Имя");
-            this.Имя.Name = "Имя";
-            this.Имя.ReadOnly = true;
-            // 
-            // Отчество
-            // 
-            resources.ApplyResources(this.Отчество, "Отчество");
-            this.Отчество.Name = "Отчество";
-            this.Отчество.ReadOnly = true;
-            // 
-            // ДатаВыдачи
-            // 
-            resources.ApplyResources(this.ДатаВыдачи, "ДатаВыдачи");
-            this.ДатаВыдачи.Name = "ДатаВыдачи";
-            this.ДатаВыдачи.ReadOnly = true;
-            // 
-            // МестоВыдачи
-            // 
-            resources.ApplyResources(this.МестоВыдачи, "МестоВыдачи");
-            this.МестоВыдачи.Name = "МестоВыдачи";
-            this.МестоВыдачи.ReadOnly = true;
-            // 
-            // СерияНомер
-            // 
-            resources.ApplyResources(this.СерияНомер, "СерияНомер");
-            this.СерияНомер.Name = "СерияНомер";
-            this.СерияНомер.ReadOnly = true;
-            // 
-            // НомерТелефона
-            // 
-            resources.ApplyResources(this.НомерТелефона, "НомерТелефона");
-            this.НомерТелефона.Name = "НомерТелефона";
-            this.НомерТелефона.ReadOnly = true;
-            // 
             // FormMain
             // 
             resources.ApplyResources(this, "$this");
@@ -425,12 +425,11 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.MaximizeBox = false;
             this.Name = "FormMain";
-            this.Load += new System.EventHandler(this.FormMain_Load);
+            ((System.ComponentModel.ISupportInitialize)(UpGrid)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(UpGrid)).EndInit();
             this.ResumeLayout(false);
 
         }

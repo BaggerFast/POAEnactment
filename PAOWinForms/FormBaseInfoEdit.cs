@@ -5,8 +5,6 @@ using System;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
 using PAOCore;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
 
 namespace PAOWinForms
 {
@@ -34,6 +32,21 @@ namespace PAOWinForms
             settlement.Text = data.Settlement;
             city.Text = data.City;
             clientBasedOn.Text = data.ClientBasedOn;
+            
+            RadioButtons_Init();
+
+        }
+
+        private void RadioButtons_Init()
+        {
+            if (city.Text == "" && settlement.Text != "")
+            {
+                settlement.Enabled = true;
+                radioSettlement.Checked = true;
+
+                radioCity.Checked = false;
+                city.Enabled = false;
+            }
         }
 
         private void RadioSettlement_CheckedChanged(object sender, EventArgs e)
@@ -49,8 +62,6 @@ namespace PAOWinForms
         /// <summary>
         /// Sync Radio Button and TextBox.
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
         private void SyncRadioAndText(object sender, TextBox text)
         {
             RadioButton btn = (RadioButton)sender;
@@ -76,6 +87,18 @@ namespace PAOWinForms
             }
         }
 
+        private void TextBox_CharParser(object sender, KeyPressEventArgs e)
+        {
+            if (sender is TextBox)
+            {
+                Regex regexNum = new Regex("[0-9]");
+                if (regexNum.IsMatch(e.KeyChar.ToString()))
+                {
+                    e.Handled = true;
+                }
+            }
+        }
+
         private void Save_Click(object sender, EventArgs e)
         {
             data.ClientName = clientName.Text;
@@ -95,16 +118,8 @@ namespace PAOWinForms
             data.City = city.Text;
             data.ClientBasedOn = clientBasedOn.Text;
 
-            var results = new List<ValidationResult>();
-            var context = new ValidationContext(data);
-            if (!Validator.TryValidateObject(data, context, results, true))
-            {
-                foreach (var error in results)
-                {
-                    MessageBox.Show(error.ErrorMessage);
-                    break;
-                }
-            }
+            if (!data.IsValid())
+                MessageBox.Show(data.errors[0].ErrorMessage);
             else Close();
         }
 

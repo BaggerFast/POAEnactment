@@ -3,6 +3,7 @@
 
 using System;
 using System.IO;
+using System.Text.RegularExpressions;
 using System.Windows.Forms;
 using System.Xml.Serialization;
 using PAOCore;
@@ -12,7 +13,7 @@ namespace PAOWinForms
 {
     public partial class FormMain : Form
     {
-        private Data data = Data.Instance;
+        private readonly Data data = Data.Instance;
 
         public FormMain()
         {
@@ -67,18 +68,19 @@ namespace PAOWinForms
                 file.Close();
                 MessageBox.Show("ready");
             }
-
-
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void TextBox_IntParser(object sender, KeyPressEventArgs e)
         {
-
+            if (sender is TextBox)
+            {
+                Regex regexNum = new Regex("[0-9]");
+                if (!regexNum.IsMatch(e.KeyChar.ToString()) && e.KeyChar != Convert.ToChar(8))
+                {
+                    e.Handled = true;
+                }
+            }
         }
 
-        private void FormMain_Load(object sender, EventArgs e)
-        {
-
-        }
     }
 }

@@ -134,11 +134,13 @@ namespace PAOWinForms
             // 
             resources.ApplyResources(this.middleName, "middleName");
             this.middleName.Name = "middleName";
+            this.middleName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBox_CharParser);
             // 
             // firstName
             // 
             resources.ApplyResources(this.firstName, "firstName");
             this.firstName.Name = "firstName";
+            this.firstName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBox_CharParser);
             // 
             // label10
             // 
@@ -149,6 +151,7 @@ namespace PAOWinForms
             // 
             resources.ApplyResources(this.lastName, "lastName");
             this.lastName.Name = "lastName";
+            this.lastName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBox_CharParser);
             // 
             // groupBox2
             // 
