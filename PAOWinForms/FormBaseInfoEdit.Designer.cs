@@ -190,11 +190,13 @@ namespace PAOWinForms
             // 
             resources.ApplyResources(this.settlement, "settlement");
             this.settlement.Name = "settlement";
+            this.settlement.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBox_CharParser);
             // 
             // city
             // 
             resources.ApplyResources(this.city, "city");
             this.city.Name = "city";
+            this.city.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBox_CharParser);
             // 
             // radioSettlement
             // 
@@ -244,6 +246,7 @@ namespace PAOWinForms
             // 
             resources.ApplyResources(this.street, "street");
             this.street.Name = "street";
+            this.street.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBox_CharParser);
             // 
             // label4
             // 
@@ -259,6 +262,7 @@ namespace PAOWinForms
             // 
             resources.ApplyResources(this.district, "district");
             this.district.Name = "district";
+            this.district.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBox_CharParser);
             // 
             // codeRegion
             // 

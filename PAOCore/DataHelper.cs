@@ -64,7 +64,6 @@ namespace PAOCore
         [Required(ErrorMessage = "Необходимо заполнить поле \"ДОМ\"")]
         public string Build { get; set; }
 
-        [Required(ErrorMessage = "Необходимо заполнить поле \"КОРПУС\"")]
         public string Housing { get; set; }
 
         [Required(ErrorMessage = "Необходимо заполнить поле \"КВАРТИРА\"")]
