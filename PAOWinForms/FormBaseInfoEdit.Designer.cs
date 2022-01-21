@@ -350,6 +350,7 @@ namespace PAOWinForms
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FormBaseInfoEdit";
+            this.Load += new System.EventHandler(this.FormBaseInfoEdit_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
