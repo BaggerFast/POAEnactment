@@ -10,32 +10,42 @@ namespace PAOWinForms
 {
     public partial class FormBaseInfoEdit : Form
     {
-        private Data data = Data.Instance;
+        #region Public and private fields and properties
+
+        public DataHelper Data { get; private set; } = DataHelper.Instance;
+
+        #endregion
+
+        #region Constructor and destructor
 
         public FormBaseInfoEdit()
         {
             InitializeComponent();
 
-            clientInn.Text = data.ClientInn;
-            clientKpp.Text = data.ClientKpp;
-            lastName.Text = data.FirstName;
-            firstName.Text = data.LastName;
-            clientName.Text = data.ClientName;
-            middleName.Text = data.MiddleName;
-            index.Text = data.Index;
-            codeRegion.Text = data.CodeRegion;
-            apartment.Text = data.Apartment;
-            street.Text = data.Street;
-            build.Text = data.Build;
-            housing.Text = data.Housing;
-            district.Text = data.District;
-            settlement.Text = data.Settlement;
-            city.Text = data.City;
-            clientBasedOn.Text = data.ClientBasedOn;
-            
+            clientInn.Text = Data.ClientInn;
+            clientKpp.Text = Data.ClientKpp;
+            lastName.Text = Data.FirstName;
+            firstName.Text = Data.LastName;
+            clientName.Text = Data.ClientName;
+            middleName.Text = Data.MiddleName;
+            index.Text = Data.Index;
+            codeRegion.Text = Data.CodeRegion;
+            apartment.Text = Data.Apartment;
+            street.Text = Data.Street;
+            build.Text = Data.Build;
+            housing.Text = Data.Housing;
+            district.Text = Data.District;
+            settlement.Text = Data.Settlement;
+            city.Text = Data.City;
+            clientBasedOn.Text = Data.ClientBasedOn;
+
             RadioButtons_Init();
 
         }
+
+        #endregion
+
+        #region Public and private methods
 
         private void RadioButtons_Init()
         {
@@ -101,25 +111,25 @@ namespace PAOWinForms
 
         private void Save_Click(object sender, EventArgs e)
         {
-            data.ClientName = clientName.Text;
-            data.ClientInn = clientInn.Text;
-            data.ClientKpp = clientKpp.Text;
-            data.LastName = lastName.Text;
-            data.FirstName = firstName.Text;
-            data.MiddleName = middleName.Text;
-            data.Index = index.Text;
-            data.CodeRegion = codeRegion.Text;
-            data.District = district.Text;
-            data.Street = street.Text;
-            data.Build = build.Text;
-            data.Housing = housing.Text;
-            data.Apartment = apartment.Text;
-            data.Settlement = settlement.Text;
-            data.City = city.Text;
-            data.ClientBasedOn = clientBasedOn.Text;
+            Data.ClientName = clientName.Text;
+            Data.ClientInn = clientInn.Text;
+            Data.ClientKpp = clientKpp.Text;
+            Data.LastName = lastName.Text;
+            Data.FirstName = firstName.Text;
+            Data.MiddleName = middleName.Text;
+            Data.Index = index.Text;
+            Data.CodeRegion = codeRegion.Text;
+            Data.District = district.Text;
+            Data.Street = street.Text;
+            Data.Build = build.Text;
+            Data.Housing = housing.Text;
+            Data.Apartment = apartment.Text;
+            Data.Settlement = settlement.Text;
+            Data.City = city.Text;
+            Data.ClientBasedOn = clientBasedOn.Text;
 
-            if (!data.IsValid())
-                MessageBox.Show(data.errors[0].ErrorMessage);
+            if (!Data.IsValid())
+                MessageBox.Show(Data.Errors[0].ErrorMessage);
             else Close();
         }
 
@@ -127,5 +137,7 @@ namespace PAOWinForms
         {
             Close();
         }
+
+        #endregion
     }
 }

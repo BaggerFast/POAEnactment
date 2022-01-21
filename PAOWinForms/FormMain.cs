@@ -13,12 +13,22 @@ namespace PAOWinForms
 {
     public partial class FormMain : Form
     {
-        private readonly Data data = Data.Instance;
+        #region Public and private fields and properties
+
+        public DataHelper Data { get; private set; } = DataHelper.Instance;
+
+        #endregion
+
+        #region Constructor and destructor
 
         public FormMain()
         {
             InitializeComponent();
         }
+
+        #endregion
+
+        #region Public and private methods
 
         private void Edit_Click(object sender, EventArgs e)
         {
@@ -26,19 +36,19 @@ namespace PAOWinForms
 
             form.ShowDialog();
 
-            clientKpp.Text = data.ClientKpp;
-            clientInn.Text = data.ClientInn;
-            director.Text = data.Director;
-            clientName.Text = data.ClientName;
-            index.Text = data.Index;
-            codeRegion.Text = data.CodeRegion;
-            apartment.Text = data.Apartment;
-            street.Text = data.Street;
-            build.Text = data.Build;
-            housing.Text = data.Housing;
-            district.Text = data.District;
-            settlement.Text = data.Settlement;
-            city.Text = data.City;
+            clientKpp.Text = Data.ClientKpp;
+            clientInn.Text = Data.ClientInn;
+            director.Text = Data.Director;
+            clientName.Text = Data.ClientName;
+            index.Text = Data.Index;
+            codeRegion.Text = Data.CodeRegion;
+            apartment.Text = Data.Apartment;
+            street.Text = Data.Street;
+            build.Text = Data.Build;
+            housing.Text = Data.Housing;
+            district.Text = Data.District;
+            settlement.Text = Data.Settlement;
+            city.Text = Data.City;
         }
 
         private void AddUp_Click(object sender, EventArgs e)
@@ -49,21 +59,23 @@ namespace PAOWinForms
 
         private void CreateXML_Click(object sender, EventArgs e)
         {
-            data.AuthorityDate = authorityDate.Text;
-            data.NumberEnd = numberEnd.Text;
-            data.AuthorityNo = authorityNo.Text;
-        
+            Data.AuthorityDate = authorityDate.Text;
+            Data.NumberEnd = numberEnd.Text;
+            Data.AuthorityNo = authorityNo.Text;
 
-            SaveFileDialog saveDialog = new SaveFileDialog();
-            saveDialog.Filter = "Extensible Markup Language|*.xml";
-            saveDialog.Title = "Save as";
+
+            SaveFileDialog saveDialog = new SaveFileDialog
+            {
+                Filter = "Extensible Markup Language|*.xml",
+                Title = "Save as"
+            };
             saveDialog.ShowDialog();
 
             if (saveDialog.FileName != "")
             {
                 FileStream file = (FileStream)saveDialog.OpenFile();
-                var xml = new Xml();
-                XmlSerializer serializer = new XmlSerializer(type: typeof(Xml));
+                XmlEntity xml = new XmlEntity();
+                XmlSerializer serializer = new XmlSerializer(type: typeof(XmlEntity));
                 serializer.Serialize(file, xml);
                 file.Close();
                 MessageBox.Show("ready");
@@ -82,5 +94,6 @@ namespace PAOWinForms
             }
         }
 
+        #endregion
     }
 }

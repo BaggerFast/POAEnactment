@@ -1,13 +1,21 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.31702.278
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.32112.339
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PAOTests", "PAOTests\PAOTests.csproj", "{0615580E-ED3D-44F8-88D9-D800CD06B39E}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PAOWinForms", "PAOWinForms\PAOWinForms.csproj", "{6AB4B476-724F-4AA7-BD3C-7EDAA1EF79A7}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PAOCore", "PAOCore\PAOCore.csproj", "{60F2D963-39DA-4DC5-9D8E-8CF2FB3472DA}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{635E28A8-EC90-43AF-9B08-312445DF31E6}"
+	ProjectSection(SolutionItems) = preProject
+		CHANGELOG.md = CHANGELOG.md
+		LICENSE.md = LICENSE.md
+		QUICK_START.md = QUICK_START.md
+		README.md = README.md
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
