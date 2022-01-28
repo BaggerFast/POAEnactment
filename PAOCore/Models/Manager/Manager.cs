@@ -31,7 +31,7 @@ namespace PAOCore.Models.Manager
         /// <summary>
         /// Пасспорт
         /// </summary>
-        public virtual ManagerPassport Passport{ get; set; }
+        public virtual ManagerPassport Passport { get; set; }
         
         #endregion
 
