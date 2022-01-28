@@ -1,86 +1,43 @@
-using System;
-using System.Collections.Generic;
-using System.Text;
+// This is an independent project of an individual developer. Dear PVS-Studio, please check it.
+// PVS-Studio Static Code Analyzer for C, C++, C#, and Java: http://www.viva64.com/
 
-namespace PAOСore
+using PAOСore;
+
+
+namespace PAOCore.Models.Company
 {
+    /// <summary>
+    /// Таблица "Компания"
+    /// </summary>
     public class Company: BaseEntity
     {
         #region public and private fields and properties
-
+        /// <summary>
+        /// Название
+        /// </summary>
         public virtual string Name { get; set; }
-
+        /// <summary>
+        /// Кпп
+        /// </summary>
         public virtual string Kpp { get; set; }
-
+        /// <summary>
+        /// Инн
+        /// </summary>
         public virtual string Inn { get; set; }
-
+        /// <summary>
+        /// Директор
+        /// </summary>
         public virtual DirectorOfCompany Director { get; set; }
-
+        /// <summary>
+        /// Адрес 
+        /// </summary>
         public virtual AddressOfCompany Address{ get; set; }
-
+        /// <summary>
+        /// Основания полномочий
+        /// </summary>
         public virtual string ClientBasedOn { get; set; }
 
         #endregion
     }
-
-    public class DirectorOfCompany: BaseEntity
-    {
-        #region public and private fields and properties
-
-        public virtual string FirstName { get; set; }
-
-        public virtual string LastName { get; set; }
-
-        public virtual string MiddleName { get; set; }
-
-        public virtual Company Company { get; set; }
-
-        #endregion
-
-    }
-
-    public class AddressOfCompany: BaseEntity
-    {
-        #region public and private fields and properties
-        
-        public virtual string Index { get; set; }
-
-        public virtual string CodeRegion { get; set; }
-
-        public virtual string District { get; set; }
-
-        public virtual string City { get; set; }
-
-        public virtual string Settlement { get; set; }
-
-        public virtual string Street { get; set; }
-
-        public virtual string Build { get; set; }
-
-        public virtual string Housing { get; set; }
-
-        public virtual string Apartment { get; set; }
-
-        public virtual Company Company { get; set; }
-
-        #endregion
-    }
-
-    public class Authority: BaseEntity
-    {
-        #region public and private fields and properties
-
-        public virtual DateTime Start { get; set; }
-
-        public virtual DateTime End { get; set; }
-
-        public virtual string District { get; set; }
-
-        public virtual Company Company { get; set; }
-
-        #endregion
-    }
-
-
 
 }

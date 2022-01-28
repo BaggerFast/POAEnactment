@@ -1,8 +1,9 @@
-using System;
-using System.Collections.Generic;
-using System.Text;
+// This is an independent project of an individual developer. Dear PVS-Studio, please check it.
+// PVS-Studio Static Code Analyzer for C, C++, C#, and Java: http://www.viva64.com/
 
-namespace PAOСore
+using PAOСore;
+
+namespace PAOCore.Models.Manager
 {
     /// <summary>
     /// Таблица "Уполномоченное лицо"
