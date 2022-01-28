@@ -215,7 +215,6 @@ namespace PAOWinForms
             // 
             resources.ApplyResources(this.housing, "housing");
             this.housing.Name = "housing";
-            this.housing.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBox_IntParser);
             // 
             // build
             // 
