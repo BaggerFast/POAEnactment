@@ -2,35 +2,36 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace PAODb
+namespace PAOРЎore
 {
     /// <summary>
-    /// Таблица "Уполномоченное лицо"
+    /// РўР°Р±Р»РёС†Р° "РЈРїРѕР»РЅРѕРјРѕС‡РµРЅРЅРѕРµ Р»РёС†Рѕ"
     /// </summary>
     public class Manager : BaseEntity
     {
         #region public and private fields and properties
 
         /// <summary>
-        /// Имя
+        /// РРјСЏ
         /// </summary>
         public virtual string FirstName { get; set; }
         /// <summary>
-        /// Фамилия
+        /// Р¤Р°РјРёР»РёСЏ
         /// </summary>
         public virtual string LastName { get; set; }
         /// <summary>
-        /// Отчество
+        /// РћС‚С‡РµСЃС‚РІРѕ
         /// </summary>
         public virtual string MiddleName { get; set; }
         /// <summary>
-        /// Телефон
+        /// РўРµР»РµС„РѕРЅ
         /// </summary>
         public virtual string Phone { get; set; }
         /// <summary>
-        /// Паспорт
+        /// РџР°СЃСЃРїРѕСЂС‚
         /// </summary>
         public virtual ManagerPassport Passport{ get; set; }
+        
         #endregion
 
     }

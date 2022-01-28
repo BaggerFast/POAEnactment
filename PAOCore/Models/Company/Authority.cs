@@ -1,11 +1,10 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace PAODb
+namespace PAOCore.Models.Company
 {
-    public class Company: BaseEntity
+    class Authority
     {
-  
     }
 }

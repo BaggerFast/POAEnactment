@@ -1,6 +1,6 @@
 using System;
 
-namespace PAODb
+namespace PAOСore
 {
     public abstract class BaseEntity
     {
