@@ -64,4 +64,8 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <Build Include="Manager.sql" />
+    <Build Include="ManagerPassport.sql" />
+  </ItemGroup>
 </Project>
