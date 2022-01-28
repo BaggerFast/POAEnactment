@@ -4,7 +4,8 @@ using System.Text;
 
 namespace PAODb
 {
-    class ClassFile1
+    public class Company: BaseEntity
     {
+  
     }
 }

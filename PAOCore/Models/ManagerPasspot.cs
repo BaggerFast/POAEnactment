@@ -1,0 +1,38 @@
+using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace PAODb
+{
+    /// <summary>
+    /// Таблица "Пасспорт уполномоченного лица"
+    /// </summary>
+    public class ManagerPassport : BaseEntity
+    {
+        #region public and private fields and properties
+
+        /// <summary>
+        /// Серия паспорта
+        /// </summary>
+        public virtual string Series { get; set; }
+        /// <summary>
+        /// Номер пасспорта
+        /// </summary>
+        public virtual string Number { get; set; }
+        /// <summary>
+        /// Дата выдачи
+        /// </summary>
+        public virtual DateTime DateIssue { get; set; }
+        /// <summary>
+        /// Место выдачи
+        /// </summary>
+        public virtual string PlaceIssue { get; set; }
+        /// <summary>
+        /// Уполномоченное лицо
+        /// </summary>
+        public virtual Manager Manager { get; set; }
+        #endregion
+
+    }
+
+}
