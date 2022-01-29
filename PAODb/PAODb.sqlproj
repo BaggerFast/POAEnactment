@@ -67,5 +67,12 @@
   <ItemGroup>
     <Build Include="Manager.sql" />
     <Build Include="ManagerPassport.sql" />
+    <Build Include="Company.sql" />
+    <Build Include="DirectorOfCompany.sql" />
+    <Build Include="AddressOfCompany.sql" />
+    <Build Include="Authority.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <RefactorLog Include="PAODb.refactorlog" />
   </ItemGroup>
 </Project>

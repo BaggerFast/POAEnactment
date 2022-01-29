@@ -13,6 +13,6 @@ namespace PAOСore
         /// <summary>
         /// Уникальный идентификатор (id)
         /// </summary>
-        public virtual Guid UID { get; set; }
+        public virtual Guid ID { get; set; }
     }
 }
