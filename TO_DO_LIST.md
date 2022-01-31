@@ -1,5 +1,20 @@
 # To do list
 
+## 2022-02-01
+### Fix it
+- PAODb. Заменить тип NCHAR на NVARCHAR.
+- PAODb. Каскадное удаление удалить. Этого категорически делать нельзя.
+- PAODb. Поле UID. Добавить значение по умолчанию.
+  [UID] uniqueidentifier not null primary key default newid(),
+- PAOCore. Определиться с принадлежностью входящих классов.
+  Например: CompanyEntity и PersonEntity
+	- либо CompanyEntity содержит PersonEntity
+	- либо PersonEntity содержит CompanyEntity
+  Объектная модель данных должна повторять структуру БД.
+- PAOSQLScripts. Добавить скрипты:
+  - Tables fill.sql
+  - Tables clear.sql
+
 ## 2022-01-31
 ### Fix it
 - Не актуализирован файл CHANGELOG.md.
