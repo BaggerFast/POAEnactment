@@ -6,16 +6,18 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 -
-## [0.02.030] - 2022-01-31
+
+## [0.02.040] - 2022-01-31
 ### Added
 - Sql tables
 - Models classes for sql tables
+- CoreTests v.0.02.040
 ### Changed
 - PAOCore v.0.02.030
   - Moved models classes to another namespace
   - Rewritten validation of DataHelper class
 - PAODb v.0.02.030
-- PAOTests v.0.02.030
+- PAOCoreTests v.0.02.040
 - PAOWinForms v.0.02.030
 
 ## [0.02.010] - 2022-01-21
