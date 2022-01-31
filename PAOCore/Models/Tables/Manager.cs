@@ -3,10 +3,10 @@
 
 using PAOСore;
 
-namespace PAOCore.Models.Manager
+namespace PAOCore.Models.Tables
 {
     /// <summary>
-    /// Таблица "Уполномоченное лицо"
+    /// Таблица "Уполномоченное лицо".
     /// </summary>
     public class Manager : BaseEntity
     {
@@ -32,8 +32,7 @@ namespace PAOCore.Models.Manager
         /// Пасспорт
         /// </summary>
         public virtual ManagerPassport Passport { get; set; }
-        
-        #endregion
 
+        #endregion
     }
 }

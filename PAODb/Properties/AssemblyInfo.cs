@@ -19,5 +19,5 @@
 //      Номер построения
 //      Редакция
 //
-[assembly: AssemblyVersion("0.02.020")]
-[assembly: AssemblyFileVersion("0.02.020")]
+[assembly: AssemblyVersion("0.02.030")]
+[assembly: AssemblyFileVersion("0.02.030")]

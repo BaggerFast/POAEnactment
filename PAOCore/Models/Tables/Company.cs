@@ -4,40 +4,40 @@
 using PAOСore;
 
 
-namespace PAOCore.Models.Company
+namespace PAOCore.Models.Tables
 {
     /// <summary>
-    /// Таблица "Компания"
+    /// Таблица "Компания".
     /// </summary>
-    public class Company: BaseEntity
+    public class Company : BaseEntity
     {
         #region public and private fields and properties
+
         /// <summary>
-        /// Название
+        /// Название.
         /// </summary>
         public virtual string Name { get; set; }
         /// <summary>
-        /// Кпп
+        /// Кпп.
         /// </summary>
         public virtual string Kpp { get; set; }
         /// <summary>
-        /// Инн
+        /// Инн.
         /// </summary>
         public virtual string Inn { get; set; }
         /// <summary>
-        /// Директор
+        /// Директор.
         /// </summary>
         public virtual DirectorOfCompany Director { get; set; }
         /// <summary>
-        /// Адрес 
+        /// Адрес.
         /// </summary>
-        public virtual AddressOfCompany Address{ get; set; }
+        public virtual AddressOfCompany Address { get; set; }
         /// <summary>
-        /// Основания полномочий
+        /// Основания полномочий.
         /// </summary>
         public virtual string ClientBasedOn { get; set; }
 
         #endregion
     }
-
 }

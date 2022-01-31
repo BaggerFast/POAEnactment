@@ -3,52 +3,53 @@
 
 using PAOСore;
 
-namespace PAOCore.Models.Company
+namespace PAOCore.Models.Tables
 {
     /// <summary>
-    /// Таблица "Адрес компании"
+    /// Таблица "Адрес компании".
     /// </summary>
     public class AddressOfCompany : BaseEntity
     {
         #region public and private fields and properties
+
         /// <summary>
-        /// Индекс
+        /// Индекс.
         /// </summary>
         public virtual string Index { get; set; }
         /// <summary>
-        /// Код региона
+        /// Код региона.
         /// </summary>
         public virtual string CodeRegion { get; set; }
         /// <summary>
-        /// Район
+        /// Район.
         /// </summary>
         public virtual string District { get; set; }
         /// <summary>
-        /// Город
+        /// Город.
         /// </summary>
         public virtual string City { get; set; }
         /// <summary>
-        /// Населенный пункт
+        /// Населенный пункт.
         /// </summary>
         public virtual string Settlement { get; set; }
         /// <summary>
-        /// Улица
+        /// Улица.
         /// </summary>
         public virtual string Street { get; set; }
         /// <summary>
-        /// Дом
+        /// Дом.
         /// </summary>
         public virtual string Build { get; set; }
         /// <summary>
-        /// Корпус
+        /// Корпус.
         /// </summary>
         public virtual string Housing { get; set; }
         /// <summary>
-        /// Квартира
+        /// Квартира.
         /// </summary>
         public virtual string Apartment { get; set; }
         /// <summary>
-        /// Компания
+        /// Компания.
         /// </summary>
         public virtual Company Company { get; set; }
 

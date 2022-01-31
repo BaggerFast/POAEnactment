@@ -3,7 +3,7 @@
 
 using PAOСore;
 
-namespace PAOCore.Models.Company
+namespace PAOCore.Models.Tables
 {
     /// <summary>
     /// Таблица "Директор компании"
@@ -11,24 +11,24 @@ namespace PAOCore.Models.Company
     public class DirectorOfCompany : BaseEntity
     {
         #region public and private fields and properties
+
         /// <summary>
-        /// Имя
+        /// Имя.
         /// </summary>
         public virtual string FirstName { get; set; }
         /// <summary>
-        /// Фамилия
+        /// Фамилия.
         /// </summary>
         public virtual string LastName { get; set; }
         /// <summary>
-        /// Отчество
+        /// Отчество.
         /// </summary>
         public virtual string MiddleName { get; set; }
         /// <summary>
-        /// Компания
+        /// Компания.
         /// </summary>
         public virtual Company Company { get; set; }
 
         #endregion
-
     }
 }

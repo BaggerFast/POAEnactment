@@ -6,12 +6,12 @@ using System;
 namespace PAOСore
 {   
     /// <summary>
-    /// Базовое представление модели базы данных
+    /// Базовое представление модели базы данных.
     /// </summary>
     public abstract class BaseEntity
     {
         /// <summary>
-        /// Уникальный идентификатор (id)
+        /// Уникальный идентификатор (id).
         /// </summary>
         public virtual Guid ID { get; set; }
     }

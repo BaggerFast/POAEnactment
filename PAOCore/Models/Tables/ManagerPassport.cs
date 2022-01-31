@@ -4,37 +4,36 @@
 using PAOСore;
 using System;
 
-namespace PAOCore.Models.Manager
+namespace PAOCore.Models.Tables
 {
     /// <summary>
-    /// Таблица "Паспорт уполномоченного лица"
+    /// Таблица "Паспорт".
     /// </summary>
     public class ManagerPassport : BaseEntity
     {
         #region public and private fields and properties
 
         /// <summary>
-        /// Серия паспорта
+        /// Серия паспорта.
         /// </summary>
         public virtual string Series { get; set; }
         /// <summary>
-        /// Номер пасспорта
+        /// Номер пасспорта.
         /// </summary>
         public virtual string Number { get; set; }
         /// <summary>
-        /// Дата получения
+        /// Дата получения.
         /// </summary>
         public virtual DateTime DateIssue { get; set; }
         /// <summary>
-        /// Место получения
+        /// Место получения.
         /// </summary>
         public virtual string PlaceIssue { get; set; }
         /// <summary>
-        /// Уполномоченное лицо
+        /// Уполномоченное лицо.
         /// </summary>
         public virtual Manager Manager { get; set; }
+
         #endregion
-
     }
-
 }
