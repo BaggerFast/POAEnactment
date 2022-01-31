@@ -22,7 +22,7 @@ namespace PAOCore.Models.Tables
         /// </summary>
         public virtual DateTime End { get; set; }
         /// <summary>
-        /// Дата окончания.
+        /// Номер.
         /// </summary>
         public virtual string Number { get; set; }
         /// <summary>
