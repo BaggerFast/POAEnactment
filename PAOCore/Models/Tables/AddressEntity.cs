@@ -54,5 +54,24 @@ namespace PAOCore.Models.Tables
         public virtual CompanyEntity Company { get; set; }
 
         #endregion
+
+        #region Public and private methods
+
+        public override string ToString()
+        {
+            return base.ToString() +
+                $"{nameof(Index)}: {Index}. " +
+                $"{nameof(CodeRegion)}: {CodeRegion}. " +
+                $"{nameof(District)}: {District}. " +
+                $"{nameof(City)}: {City}. " +
+                $"{nameof(Settlement)}: {Settlement}. " +
+                $"{nameof(Street)}: {Street}. " +
+                $"{nameof(Build)}: {Build}. " +
+                $"{nameof(Housing)}: {Housing}. " +
+                $"{nameof(Apartment)}: {Apartment}. " +
+                $"{nameof(Company)}: {Company}. ";
+        }
+
+        #endregion
     }
 }
