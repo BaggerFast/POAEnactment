@@ -28,7 +28,7 @@ namespace PAOCore.Models.Tables
         /// <summary>
         /// Директор.
         /// </summary>
-        public virtual DirectorEntity Director { get; set; }
+        public virtual PersonEntity Director { get; set; }
         /// <summary>
         /// Адрес.
         /// </summary>
@@ -37,6 +37,21 @@ namespace PAOCore.Models.Tables
         /// Основания полномочий.
         /// </summary>
         public virtual string ClientBasedOn { get; set; }
+
+        #endregion
+
+        #region Public and private methods
+
+        public override string ToString()
+        {
+            return base.ToString() +
+                $"{nameof(Name)}: {Name}. " +
+                $"{nameof(Kpp)}: {Kpp}. " +
+                $"{nameof(Inn)}: {Inn}. " +
+                $"{nameof(Director)}: {Director}. " +
+                $"{nameof(Address)}: {Address}. " +
+                $"{nameof(ClientBasedOn)}: {ClientBasedOn}. ";
+        }
 
         #endregion
     }

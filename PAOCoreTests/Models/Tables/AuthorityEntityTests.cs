@@ -1,4 +1,4 @@
-// This is an independent project of an individual developer. Dear PVS-Studio, please check it.
+﻿// This is an independent project of an individual developer. Dear PVS-Studio, please check it.
 // PVS-Studio Static Code Analyzer for C, C++, C#, and Java: http://www.viva64.com
 
 using CoreTests;
@@ -8,17 +8,17 @@ using PAOCore.Models.Tables;
 namespace PAOTests
 {
     [TestFixture]
-    internal class AddressEntityTests
+    internal class AuthorityEntityTests
     {
         [Test]
-        public void AddressEntity_Ctor_DoesNotThrow()
+        public void AuthorityEntity_Ctor_DoesNotThrow()
         {
             TestsUtils.MethodStart();
 
             Assert.DoesNotThrow(() =>
             {
-                AddressEntity address = new();
-                TestContext.WriteLine($"{nameof(address).ToUpper()}: {address}");
+                AuthorityEntity authority = new();
+                TestContext.WriteLine($"{nameof(authority).ToUpper()}: {authority}");
             });
 
             TestsUtils.MethodComplete();

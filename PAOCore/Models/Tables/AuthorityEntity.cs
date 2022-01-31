@@ -31,5 +31,19 @@ namespace PAOCore.Models.Tables
         public virtual CompanyEntity Company { get; set; }
 
         #endregion
+
+
+        #region Public and private methods
+
+        public override string ToString()
+        {
+            return base.ToString() +
+                $"{nameof(Start)}: {Start}. " +
+                $"{nameof(End)}: {End}. " +
+                $"{nameof(Number)}: {Number}. " +
+                $"{nameof(Company)}: {Company}. ";
+        }
+
+        #endregion
     }
 }

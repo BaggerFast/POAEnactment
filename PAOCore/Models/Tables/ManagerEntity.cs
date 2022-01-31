@@ -1,4 +1,4 @@
-﻿// This is an independent project of an individual developer. Dear PVS-Studio, please check it.
+// This is an independent project of an individual developer. Dear PVS-Studio, please check it.
 // PVS-Studio Static Code Analyzer for C, C++, C#, and Java: http://www.viva64.com/
 
 using PAOСore;
@@ -6,28 +6,32 @@ using PAOСore;
 namespace PAOCore.Models.Tables
 {
     /// <summary>
-    /// Таблица "Директор компании"
+    /// Таблица "Уполномоченное лицо".
     /// </summary>
-    public class PersonEntity : BaseEntity
+    public class ManagerEntity: BaseEntity
     {
         #region public and private fields and properties
 
         /// <summary>
-        /// Имя.
+        /// Имя
         /// </summary>
         public virtual string FirstName { get; set; }
         /// <summary>
-        /// Фамилия.
+        /// Фамилия
         /// </summary>
         public virtual string LastName { get; set; }
         /// <summary>
-        /// Отчество.
+        /// Отчество
         /// </summary>
         public virtual string MiddleName { get; set; }
         /// <summary>
-        /// Компания.
+        /// Телефон
         /// </summary>
-        public virtual CompanyEntity Company { get; set; }
+        public virtual string Phone { get; set; }
+        /// <summary>
+        /// Пасспорт
+        /// </summary>
+        public virtual PassportEntity Passport { get; set; }
 
         #endregion
 
@@ -39,7 +43,8 @@ namespace PAOCore.Models.Tables
                 $"{nameof(FirstName)}: {FirstName}. " +
                 $"{nameof(LastName)}: {LastName}. " +
                 $"{nameof(MiddleName)}: {MiddleName}. " +
-                $"{nameof(Company)}: {Company}. ";
+                $"{nameof(Phone)}: {Passport}. " +
+                $"{nameof(Passport)}: {Passport}. ";
         }
 
         #endregion

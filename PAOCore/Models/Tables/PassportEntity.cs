@@ -32,7 +32,21 @@ namespace PAOCore.Models.Tables
         /// <summary>
         /// Уполномоченное лицо.
         /// </summary>
-        public virtual PersonEntity Person { get; set; }
+        public virtual ManagerEntity Manager{ get; set; }
+
+        #endregion
+
+        #region Public and private methods
+
+        public override string ToString()
+        {
+            return base.ToString() +
+                $"{nameof(Series)}: {Series}. " +
+                $"{nameof(Number)}: {Number}. " +
+                $"{nameof(DateIssue)}: {DateIssue}. " +
+                $"{nameof(PlaceIssue)}: {PlaceIssue}. " +
+                $"{nameof(Manager)}: {Manager}. ";
+        }
 
         #endregion
     }

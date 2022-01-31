@@ -1,24 +1,24 @@
-// This is an independent project of an individual developer. Dear PVS-Studio, please check it.
+ï»¿// This is an independent project of an individual developer. Dear PVS-Studio, please check it.
 // PVS-Studio Static Code Analyzer for C, C++, C#, and Java: http://www.viva64.com
 
 using CoreTests;
 using NUnit.Framework;
-using PAOÑore;
+using PAOCore.Models.Tables;
 
 namespace PAOTests
 {
     [TestFixture]
-    internal class BaseEntityTests
+    internal class ManagerEntityTests
     {
         [Test]
-        public void BaseEntity_Ctor_DoesNotThrow()
+        public void ManagerEntity_Ctor_DoesNotThrow()
         {
             TestsUtils.MethodStart();
 
             Assert.DoesNotThrow(() =>
             {
-                BaseEntity @base = new();
-                TestContext.WriteLine($"{nameof(@base)}: {@base}");
+                ManagerEntity manager = new();
+                TestContext.WriteLine($"{nameof(manager).ToUpper()}: {manager}");
             });
 
             TestsUtils.MethodComplete();
