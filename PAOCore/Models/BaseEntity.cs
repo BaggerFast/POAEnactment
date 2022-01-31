@@ -8,7 +8,7 @@ namespace PAOСore
     /// <summary>
     /// Базовое представление модели базы данных.
     /// </summary>
-    public abstract class BaseEntity
+    public class BaseEntity
     {
         #region Public and private fields and properties
 
