@@ -9,7 +9,7 @@ namespace PAOCore.Models.Tables
     /// <summary>
     /// Таблица "Паспорт".
     /// </summary>
-    public class ManagerPassport : BaseEntity
+    public class PassportEntity: BaseEntity
     {
         #region public and private fields and properties
 
@@ -32,7 +32,7 @@ namespace PAOCore.Models.Tables
         /// <summary>
         /// Уполномоченное лицо.
         /// </summary>
-        public virtual Manager Manager { get; set; }
+        public virtual PersonEntity Person { get; set; }
 
         #endregion
     }

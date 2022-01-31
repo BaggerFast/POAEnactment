@@ -72,7 +72,4 @@
     <Build Include="Address.sql" />
     <Build Include="Authority.sql" />
   </ItemGroup>
-  <ItemGroup>
-    <RefactorLog Include="PAODb.refactorlog" />
-  </ItemGroup>
 </Project>

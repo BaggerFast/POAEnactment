@@ -9,7 +9,7 @@ namespace PAOCore.Models.Tables
     /// <summary>
     /// Таблица "Доверенность".
     /// </summary>
-    public class Authority : BaseEntity
+    public class AuthorityEntity: BaseEntity
     {
         #region public and private fields and properties
 
@@ -28,7 +28,7 @@ namespace PAOCore.Models.Tables
         /// <summary>
         /// Компания.
         /// </summary>
-        public virtual Company Company { get; set; }
+        public virtual CompanyEntity Company { get; set; }
 
         #endregion
     }

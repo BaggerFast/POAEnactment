@@ -8,7 +8,7 @@ namespace PAOCore.Models.Tables
     /// <summary>
     /// Таблица "Директор компании"
     /// </summary>
-    public class DirectorOfCompany : BaseEntity
+    public class DirectorEntity: BaseEntity
     {
         #region public and private fields and properties
 
@@ -27,7 +27,7 @@ namespace PAOCore.Models.Tables
         /// <summary>
         /// Компания.
         /// </summary>
-        public virtual Company Company { get; set; }
+        public virtual CompanyEntity Company { get; set; }
 
         #endregion
     }
