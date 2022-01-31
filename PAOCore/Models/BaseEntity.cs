@@ -10,9 +10,22 @@ namespace PAOСore
     /// </summary>
     public abstract class BaseEntity
     {
+        #region Public and private fields and properties
+
         /// <summary>
         /// Уникальный идентификатор (id).
         /// </summary>
         public virtual Guid UID { get; set; }
+
+        #endregion
+
+        #region Public and private methods
+
+        public override string ToString()
+        {
+            return $"{nameof(UID)}: {UID}. ";
+        }
+
+        #endregion
     }
 }
