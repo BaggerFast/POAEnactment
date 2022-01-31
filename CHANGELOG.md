@@ -12,6 +12,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Sql tables
 - Models classes for sql tables
 - CoreTests v.0.02.040
+- PAOSQLScripts v.0.02.040
 ### Changed
 - PAOCore v.0.02.030
   - Moved models classes to another namespace
