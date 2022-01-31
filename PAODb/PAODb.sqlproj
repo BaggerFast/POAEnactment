@@ -66,10 +66,10 @@
   </ItemGroup>
   <ItemGroup>
     <Build Include="Manager.sql" />
-    <Build Include="ManagerPassport.sql" />
+    <Build Include="Passport.sql" />
     <Build Include="Company.sql" />
-    <Build Include="DirectorOfCompany.sql" />
-    <Build Include="AddressOfCompany.sql" />
+    <Build Include="Person.sql" />
+    <Build Include="Address.sql" />
     <Build Include="Authority.sql" />
   </ItemGroup>
   <ItemGroup>
