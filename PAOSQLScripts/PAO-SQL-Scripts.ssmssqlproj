@@ -25,6 +25,12 @@
           <AssociatedConnUserName>pao_admin</AssociatedConnUserName>
           <FullPath>ADDRESS.sql</FullPath>
         </FileNode>
+        <FileNode Name="AUTHORITY.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>AUTHORITY.sql</FullPath>
+        </FileNode>
       </Items>
     </LogicalFolder>
     <LogicalFolder Name="Miscellaneous" Type="3" Sorted="true">
