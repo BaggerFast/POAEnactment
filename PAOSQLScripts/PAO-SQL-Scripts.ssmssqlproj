@@ -4,7 +4,7 @@
     <LogicalFolder Name="Connections" Type="2" Sorted="true">
       <Items>
         <ConnectionNode Name="CREATIO\INS1:pao_admin">
-          <Created>2022-01-31T14:32:36.6492918+03:00</Created>
+          <Created>2022-02-01T16:06:59.7502568+03:00</Created>
           <Type>SQL</Type>
           <Server>CREATIO\INS1</Server>
           <UserName>pao_admin</UserName>
@@ -20,9 +20,9 @@
     <LogicalFolder Name="Queries" Type="0" Sorted="true">
       <Items>
         <FileNode Name="ADDRESS.sql">
-          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:CREATIO\INS1:False:pao_admin</AssociatedConnectionMoniker>
-          <AssociatedConnSrvName>CREATIO\INS1</AssociatedConnSrvName>
-          <AssociatedConnUserName>pao_admin</AssociatedConnUserName>
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
           <FullPath>ADDRESS.sql</FullPath>
         </FileNode>
         <FileNode Name="AUTHORITY.sql">
@@ -30,6 +30,42 @@
           <AssociatedConnSrvName />
           <AssociatedConnUserName />
           <FullPath>AUTHORITY.sql</FullPath>
+        </FileNode>
+        <FileNode Name="COMPANY.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>COMPANY.sql</FullPath>
+        </FileNode>
+        <FileNode Name="MANAGER.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>MANAGER.sql</FullPath>
+        </FileNode>
+        <FileNode Name="PASSPORT.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>PASSPORT.sql</FullPath>
+        </FileNode>
+        <FileNode Name="PERSON.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>PERSON.sql</FullPath>
+        </FileNode>
+        <FileNode Name="TableFill.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>TableFill.sql</FullPath>
+        </FileNode>
+        <FileNode Name="TablesClear.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>TablesClear.sql</FullPath>
         </FileNode>
       </Items>
     </LogicalFolder>
