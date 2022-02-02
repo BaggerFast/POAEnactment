@@ -29,7 +29,7 @@ IF (@INSERT_FLAG = 1) BEGIN
 ------------------------------------------------------------------------------------------------------------------------
 	IF (NOT EXISTS (SELECT 1 FROM [ADDRESS] WHERE [COMPANY_UID]=@COMPANY_UID)) BEGIN
 		INSERT INTO [ADDRESS] ([UID],[INDEX],[CODE_REGION],[DISTRICT], [CITY], [STREET], [BUILD], [HOUSING], [APARTMENT], [COMPANY_UID])
-		VALUES (NEWID(), 600018, 33, 'Владимир','Владимир', 'Площадь Ленина', '22', 'Г', 129, @COMPANY_UID)
+		VALUES (NEWID(), '600018', '33', 'Владимир','Владимир', 'Площадь Ленина', '22', 'Г', '129', @COMPANY_UID)
 		PRINT N'[+] INSERT INTO ADDRESS SUCCESS'
 	END
 ------------------------------------------------------------------------------------------------------------------------
