@@ -1,5 +1,22 @@
 # To do list
 
+## 2022-02-02
+### Fix it
+- PAOSQLScripts. TableFill.sql: заменить булевы флаги на один флаг.
+- PAOSQLScripts. TableFill.sql: добиться выполнения без ошибок.
+  - Добавить проверки на существование.
+  Violation of UNIQUE KEY constraint 'UQ__ADDRESS__E36535483BCEA221'.
+  Violation of UNIQUE KEY constraint 'UQ__AUTHORIT__E365354862296C04'.
+  Violation of UNIQUE KEY constraint 'UQ__PERSON__E36535485061ADBE'.
+- PAOSQLScripts. TablesClear.sql: заменить булевы флаги на один флаг.
+- PAOSQLScripts. TablesClear.sql: добиться выполнения без ошибок. 
+  - Добавить проверки на существование.
+  - Поменять порядок удаления данных..
+  Cannot truncate table 'MANAGER' because it is being referenced by a FOREIGN KEY constraint.
+- PAODb. Таблица [dbo].[PERSON]: Поле [COMPANY_UID] сделать необязательным.
+- PAODb. Таблицы [dbo].[PERSON] и [dbo].[MANAGER]: Привести в соответствие длины и типы полей [FIRST_NAME], [LAST_NAME], [MIDDLE_NAME].
+- JetBrains space. Заполнить комментарии и прогрессс поставленных задач.
+
 ## 2022-02-01
 ### Fix it
 - PAODb. Заменить тип NCHAR на NVARCHAR.
