@@ -24,11 +24,6 @@ namespace PAOCore.Models.Tables
         /// Отчество.
         /// </summary>
         public virtual string MiddleName { get; set; }
-        /// <summary>
-        /// Компания.
-        /// </summary>
-        public virtual CompanyEntity Company { get; set; }
-
         #endregion
 
         #region Public and private methods
@@ -36,10 +31,9 @@ namespace PAOCore.Models.Tables
         public override string ToString()
         {
             return base.ToString() +
-                $"{nameof(FirstName)}: {FirstName}. " +
-                $"{nameof(LastName)}: {LastName}. " +
-                $"{nameof(MiddleName)}: {MiddleName}. " +
-                $"{nameof(Company)}: {Company}. ";
+                   $"{nameof(FirstName)}: {FirstName}. " +
+                   $"{nameof(LastName)}: {LastName}. " +
+                   $"{nameof(MiddleName)}: {MiddleName}. ";
         }
 
         #endregion

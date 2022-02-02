@@ -6,6 +6,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 -
+## [0.02.050] - 2022-01-31
+### Added
+- PAOSQLScripts v.0.02.050
+  - add important SQL scripts for tests
+### Changed
+- PAOCore v.0.02.050
+  - Rewritten models of SQL tables
+- PAODb v.0.02.050
+  - Some changes in models of SQL tables (Manager, Person, Company)
+- PAOCoreTests v.0.02.050
+- PAOWinForms v.0.02.050
 
 ## [0.02.040] - 2022-01-31
 ### Added

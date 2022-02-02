@@ -13,17 +13,9 @@ namespace PAOCore.Models.Tables
         #region public and private fields and properties
 
         /// <summary>
-        /// Имя
+        /// Персональ
         /// </summary>
-        public virtual string FirstName { get; set; }
-        /// <summary>
-        /// Фамилия
-        /// </summary>
-        public virtual string LastName { get; set; }
-        /// <summary>
-        /// Отчество
-        /// </summary>
-        public virtual string MiddleName { get; set; }
+        public virtual PersonEntity Fio { get; set; }
         /// <summary>
         /// Телефон
         /// </summary>
@@ -40,9 +32,7 @@ namespace PAOCore.Models.Tables
         public override string ToString()
         {
             return base.ToString() +
-                $"{nameof(FirstName)}: {FirstName}. " +
-                $"{nameof(LastName)}: {LastName}. " +
-                $"{nameof(MiddleName)}: {MiddleName}. " +
+                $"{nameof(Fio)}: {Fio}. " +
                 $"{nameof(Phone)}: {Passport}. " +
                 $"{nameof(Passport)}: {Passport}. ";
         }
