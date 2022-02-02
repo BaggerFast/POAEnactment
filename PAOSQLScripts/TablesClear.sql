@@ -1,46 +1,45 @@
 ------------------------------------------------------------------------------------------------------------------------
 -- Table clear
 ------------------------------------------------------------------------------------------------------------------------
-DECLARE @DELETE_PERSON BIT = 0
-DECLARE @DELETE_MANAGER BIT = 0
-DECLARE @DELETE_PASSPORT BIT = 0
-DECLARE @DELETE_COMPANY BIT = 0
-DECLARE @DELETE_AUTHORITY BIT = 0
-DECLARE @DELETE_ADDRESS BIT = 0
+DECLARE @DELETE_FLAG BIT = 1 -- флаг для удаление тестовых данных в таблице - по умолчанию 0
+DECLARE @COMPANY_UID UNIQUEIDENTIFIER = (SELECT [UID] FROM [COMPANY] WHERE [NAME] = N'Владимирскииииий стандартттт')
+DECLARE @MANAGER_UID UNIQUEIDENTIFIER = (SELECT [UID] FROM [MANAGER] WHERE [FIRST_NAME] = N'Дмитриййййййй')
 ------------------------------------------------------------------------------------------------------------------------
-IF (@DELETE_PASSPORT = 1) 
-BEGIN
-	DELETE FROM [PASSPORT]
-	TRUNCATE TABLE [PASSPORT]
+IF (@DELETE_FLAG = 1) BEGIN
+	PRINT N'[ ] START'
+	IF (EXISTS (SELECT 1 FROM [PASSPORT] WHERE [MANAGER_UID] = @MANAGER_UID)) BEGIN 
+		DELETE FROM [PASSPORT] WHERE [MANAGER_UID] = @MANAGER_UID
+		--TRUNCATE TABLE [PASSPORT]
+		PRINT N'[+] DELETE INTO PASSPORT SUCCESS'
+	END
+------------------------------------------------------------------------------------------------------------------------
+	IF (EXISTS (SELECT 1 FROM [MANAGER] WHERE [UID] = @MANAGER_UID)) BEGIN
+		DELETE FROM [MANAGER] WHERE [UID] = @MANAGER_UID
+		PRINT N'[+] DELETE INTO MANAGER SUCCESS'
+	END
+------------------------------------------------------------------------------------------------------------------------
+	IF (EXISTS (SELECT 1 FROM [PERSON] WHERE [COMPANY_UID]=@COMPANY_UID)) BEGIN
+		DELETE FROM [PERSON] WHERE [COMPANY_UID]=@COMPANY_UID
+		PRINT N'[+] DELETE INTO PERSON SUCCESS'
+	END
+------------------------------------------------------------------------------------------------------------------------
+	IF (EXISTS (SELECT 1 FROM [AUTHORITY] WHERE [COMPANY_UID]=@COMPANY_UID)) BEGIN
+		DELETE FROM [AUTHORITY] WHERE [COMPANY_UID]=@COMPANY_UID
+		PRINT N'[+] DELETE INTO AUTHORITY SUCCESS'
+	END
+------------------------------------------------------------------------------------------------------------------------
+	IF (EXISTS (SELECT 1 FROM [ADDRESS] WHERE [COMPANY_UID]=@COMPANY_UID)) BEGIN
+		DELETE FROM [ADDRESS] WHERE [COMPANY_UID]=@COMPANY_UID
+		PRINT N'[+] DELETE INTO ADDRESS SUCCESS'
+	END
+------------------------------------------------------------------------------------------------------------------------
+	IF EXISTS (SELECT 1 FROM [COMPANY] WHERE [UID]=@COMPANY_UID) BEGIN
+		DELETE FROM [COMPANY] WHERE [UID]=@COMPANY_UID
+		PRINT N'[+] DELETE INTO COMPANY SUCCESS'
+	END
+	PRINT N'[ ] END'
+------------------------------------------------------------------------------------------------------------------------
+END ELSE BEGIN
+	PRINT N'[ ] DELETE TEST DATA IN TABLES IS DISABLED'
 END
-------------------------------------------------------------------------------------------------------------------------
-IF (@DELETE_MANAGER = 1) 
-BEGIN
-	DELETE FROM [MANAGER]
-	TRUNCATE TABLE [MANAGER]
-END
-------------------------------------------------------------------------------------------------------------------------
-IF (@DELETE_PERSON = 1) 
-BEGIN
-	DELETE FROM [PERSON]
-	TRUNCATE TABLE [PERSON]
-END
-------------------------------------------------------------------------------------------------------------------------
-IF (@DELETE_AUTHORITY = 1) 
-BEGIN
-	DELETE FROM [AUTHORITY]
-	TRUNCATE TABLE [AUTHORITY]
-END
-------------------------------------------------------------------------------------------------------------------------
-IF (@DELETE_ADDRESS = 1) 
-BEGIN
-	DELETE FROM [ADDRESS]
-	TRUNCATE TABLE [ADDRESS]
-END
-------------------------------------------------------------------------------------------------------------------------
-IF (@DELETE_COMPANY = 1) 
-BEGIN
-	DELETE FROM [COMPANY]
-	TRUNCATE TABLE [COMPANY]
-END
-------------------------------------------------------------------------------------------------------------------------
+	
