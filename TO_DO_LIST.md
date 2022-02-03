@@ -1,5 +1,20 @@
 # To do list
 
+## 2022-02-03
+### Fix it
+- PAOCore. Классы маппингов. Перенести в PAOCore.Models.Tables.
+- PAOCore. Классы маппингов. Указать в явном виде Nullable(), там где требуется.
+- PAOCore. Добавить NuGet-пакет Microsoft.Extensions.Configuration.
+- PAOCore. Довести до ума класс JsonSettingsEntity.
+- PAOCore. Добавить загрузку настроек из файла appsettings.json.
+- PAOCoreTests. Добавить NuGet-пакет Microsoft.Extensions.Configuration.
+- PAOCoreTests. Добавить тест класса JsonSettingsEntity. Проверить загрузку данных из файла.
+- PAOScripts. TableFill. @INSERT_FLAG по-умолчанию должен быть равен 0.
+- PAOScripts. TableFill. Устранить ошибку выполнения скрипта.
+- PAOScripts. TablesClear. @@DELETE_FLAG по-умолчанию должен быть равен 0.
+- PAOScripts. TablesClear. Устранить ошибку выполнения скрипта.
+- CHANGELOG. Обновить.
+
 ## 2022-02-02
 ### Fix it
 - PAOSQLScripts. TableFill.sql: заменить булевы флаги на один флаг.

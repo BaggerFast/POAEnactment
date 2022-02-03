@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # SQL Server Management Studio Solution File, Format Version 18.00
 VisualStudioVersion = 15.0.28307.421
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{4F2E2C19-372F-40D8-9FA7-9D2138C6997A}") = "PAO-SQL-Scripts", "PAO-SQL-Scripts.ssmssqlproj", "{8BC562E8-C9C0-4AA0-A1D3-3338D8F94CA5}"
+Project("{4F2E2C19-372F-40D8-9FA7-9D2138C6997A}") = "PAOScripts", "PAOScripts.ssmssqlproj", "{8BC562E8-C9C0-4AA0-A1D3-3338D8F94CA5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
