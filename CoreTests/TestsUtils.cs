@@ -11,10 +11,8 @@ namespace CoreTests
     /// </summary>
     public static class TestsUtils
     {
-        public static string ConectionStringDevelop =
-            @"Data Source=CREATIO\INS1;Initial Catalog=PAO;Persist Security Info=True;User ID=pao_admin;Password=Asdfg12345";
-        public static string ConectionStringProduct =
-            @"Data Source=CREATIO\INS1;Initial Catalog=PAO;Persist Security Info=True;User ID=pao_admin;Password=Asdfg12345";
+        public static string ConectionStringDevelop = @"Data Source=CREATIO\INS1;Initial Catalog=PAO;Persist Security Info=True;User ID=pao_admin;Password=Asdfg12345";
+        public static string ConectionStringProduct = @"Data Source=CREATIO\INS1;Initial Catalog=PAO;Persist Security Info=True;User ID=pao_admin;Password=Asdfg12345";
 
         public static void MethodStart([CallerMemberName] string memberName = "")
         {

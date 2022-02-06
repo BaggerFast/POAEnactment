@@ -1,7 +1,7 @@
 ------------------------------------------------------------------------------------------------------------------------
 -- Table Fill
 ------------------------------------------------------------------------------------------------------------------------
-DECLARE @INSERT_FLAG BIT = 1 -- флаг для создания тестовых данных в таблице - по умолчанию 0
+DECLARE @INSERT_FLAG BIT = 0 -- флаг для создания тестовых данных в таблице - по умолчанию 0
 
 DECLARE @COMPANY_NAME NVARCHAR(255) = N'Владимирскииииий стандартттт'
 DECLARE @COMPANY_UID UNIQUEIDENTIFIER = NULL
@@ -35,7 +35,7 @@ IF (@INSERT_FLAG = 1) BEGIN
 ------------------------------------------------------------------------------------------------------------------------
 	IF (NOT EXISTS (SELECT 1 FROM [AUTHORITY] WHERE [COMPANY_UID]=@COMPANY_UID)) BEGIN
 		INSERT INTO [AUTHORITY] ([UID],[START],[END],[NUMBER], [COMPANY_UID])
-		VALUES (NEWID(), getdate(), getdate(),'123456789', @COMPANY_UID)
+		VALUES (NEWID(), getdate(), getdate(),'12345', @COMPANY_UID)
 		PRINT N'[+] INSERT INTO AUTHORITY SUCCESS'
 	END 
 ------------------------------------------------------------------------------------------------------------------------

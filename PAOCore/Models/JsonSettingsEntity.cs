@@ -2,7 +2,7 @@
 // PVS-Studio Static Code Analyzer for C, C++, C#, and Java: http://www.viva64.com
 
 using System;
-//using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.Configuration;
 
 namespace PAOCore.Models
 {
@@ -13,44 +13,71 @@ namespace PAOCore.Models
     {
         #region Public and private fields and properties
 
-        //public IConfiguration Configuration { get; }
-        //public string Server
-        //{
-        //    get => Configuration["Sql:Server"];
-        //    set => Configuration["Sql:Server"] = value;
-        //}
-        //public string Db
-        //public bool Trusted
-        //public string Username
-        //public string Password
-        //public string Schema
-        //public bool TrustServerCertificate
-        //public bool IsDebug
+        public IConfiguration Configuration { get; }
+
+        public string Server
+        {
+            get => Configuration["sql:server"];
+            set => Configuration["sql:server"] = value;
+        }
+        public string Db
+        {
+            get => Configuration["sql:db"];
+            set => Configuration["sql:db"] = value;
+        }
+        public bool Trusted
+        {
+            get => Convert.ToBoolean(Configuration["sql:trusted"]);
+            set => Configuration["sql:trusted"] = Convert.ToString(value);
+        }
+        public string Username
+        {
+            get => Configuration["sql:username"];
+            set => Configuration["sql:username"] = value;
+        }
+        public string Password
+        {
+            get => Configuration["sql:password"];
+            set => Configuration["sql:password"] = value;
+        }
+        public string Schema
+        {
+            get => Configuration["sql:server"];
+            set => Configuration["sql:server"] = value;
+        }
+        public bool TrustServerCertificate
+        {
+            get => Convert.ToBoolean(Configuration["sql:trustservercertificate"]);
+            set => Configuration["sql:trustservercertificate"] = Convert.ToString(value);
+        }
+        public bool IsDebug
+        {
+            get => Convert.ToBoolean(Configuration["isdebug"]);
+            set => Configuration["isdebug"] = Convert.ToString(value);
+        }
 
         #endregion
 
         #region Constructor and destructor
 
-        //public JsonSettingsEntity(IConfiguration configuration)
-        //{
-        //    Configuration = configuration;
-        //}
+        public JsonSettingsEntity(IConfiguration configuration)
+        {
+            Configuration = configuration;
+        }
 
         #endregion
 
         #region Public and private methods
 
-        //public override string ToString()
-        //{
-        //    string strTrusted = Trusted ? $"{nameof(Trusted)}: true." : $"{nameof(Username)}: {Username}. {nameof(Password)}: {Password}.";
-        //    return $"{nameof(Server)}: {Server}. " +
-        //           $"{nameof(Db)}: {Db}. " +
-        //           $"{strTrusted} " +
-        //           $"{nameof(TrustServerCertificate)}: {TrustServerCertificate}. " +
-        //           $"{nameof(IsDebug)}: {IsDebug}. " +
-        //           $"{nameof(SectionRowCount)}: {SectionRowCount}. " +
-        //           $"{nameof(ItemRowCount)}: {ItemRowCount}. ";
-        //}
+        public override string ToString()
+        {
+            string strTrusted = Trusted ? $"{nameof(Trusted)}: true." : $"{nameof(Username)}: {Username}. {nameof(Password)}: {Password}.";
+            return $"{nameof(Server)}: {Server}. " +
+                   $"{nameof(Db)}: {Db}. " +
+                   $"{strTrusted} " +
+                   $"{nameof(TrustServerCertificate)}: {TrustServerCertificate}. " +
+                   $"{nameof(IsDebug)}: {IsDebug}. ";
+        }
 
         #endregion
     }

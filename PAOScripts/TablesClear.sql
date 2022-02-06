@@ -1,7 +1,7 @@
 ------------------------------------------------------------------------------------------------------------------------
 -- Table clear
 ------------------------------------------------------------------------------------------------------------------------
-DECLARE @DELETE_FLAG BIT = 1 -- флаг для удаление тестовых данных в таблице - по умолчанию 0
+DECLARE @DELETE_FLAG BIT = 0 -- флаг для удаление тестовых данных в таблице - по умолчанию 0
 DECLARE @COMPANY_UID UNIQUEIDENTIFIER = (SELECT [UID] FROM [COMPANY] WHERE [NAME] = N'Владимирскииииий стандартттт')
 DECLARE @MANAGER_UID UNIQUEIDENTIFIER = (SELECT [UID] FROM [MANAGER] WHERE [PHONE] = N'89004930393')
 DECLARE @TEMP_UID UNIQUEIDENTIFIER = NULL
