@@ -20,8 +20,6 @@ Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "PAODb", "PAODb\PAODb.sqlpro
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PAOCoreTests", "PAOCoreTests\PAOCoreTests.csproj", "{67A7C61C-B213-415C-9642-EB4175A4E347}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CoreTests", "CoreTests\CoreTests.csproj", "{462D8F3E-D74A-48B6-BDA5-4618FB2C5E03}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -46,10 +44,6 @@ Global
 		{67A7C61C-B213-415C-9642-EB4175A4E347}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{67A7C61C-B213-415C-9642-EB4175A4E347}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{67A7C61C-B213-415C-9642-EB4175A4E347}.Release|Any CPU.Build.0 = Release|Any CPU
-		{462D8F3E-D74A-48B6-BDA5-4618FB2C5E03}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{462D8F3E-D74A-48B6-BDA5-4618FB2C5E03}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{462D8F3E-D74A-48B6-BDA5-4618FB2C5E03}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{462D8F3E-D74A-48B6-BDA5-4618FB2C5E03}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

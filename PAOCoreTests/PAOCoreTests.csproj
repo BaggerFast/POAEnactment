@@ -24,7 +24,6 @@
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\CoreTests\CoreTests.csproj" />
       <ProjectReference Include="..\PAOCore\PAOCore.csproj" />
     </ItemGroup>
 

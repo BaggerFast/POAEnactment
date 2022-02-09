@@ -6,6 +6,18 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 -
+## [0.02.060] - 2022-02-09
+### Added
+- PAOCoreTests v.0.02.060
+  - add test for sql configuration
+### Changed
+- PAOSQLScripts v.0.02.060
+  - fix bug in SqlFill
+- CoreTests v.0.02.060
+  - remove this project
+- PAOCoreTests v.0.02.050
+- PAOWinForms v.0.02.050
+
 ## [0.02.050] - 2022-01-31
 ### Added
 - PAOSQLScripts v.0.02.050
