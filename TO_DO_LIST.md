@@ -1,5 +1,20 @@
 # To do list
 
+## 2022-02-09
+### Do it
+- SHARP-T-9. ORM Framework NHibernate & mapping FluentNHibernate
+- CoreTests перенести в PAOCoreTests.
+- PAOCore. Разделить по файлам классы моделей данных и маппингов.
+- PAOCore. Создать синглтон AppSettingsHelper в Models.
+  - Добавить поле типа JsonSettingsEntity.
+  - Добавить метод загрузки экземпляра JsonSettingsEntity. public void SetupJsonSettings(JsonSettingsEntity jsonAppSettings)
+- PAOCoreTests. Создать тесты на загрузку и обработку JsonSettingsEntity.
+- PAOCore. Создать класс DataAccessEntity в Models.
+- Изучить Database configuration
+  https://github.com/nhibernate/fluent-nhibernate/wiki/Database-configuration
+### Fix it
+- SHARP-T-10. PAOWinForms exception XmlSerializer
+
 ## 2022-02-03
 ### Fix it
 - PAOCore. Классы маппингов. Перенести в PAOCore.Models.Tables.
@@ -11,7 +26,7 @@
 - PAOCoreTests. Добавить тест класса JsonSettingsEntity. Проверить загрузку данных из файла.
 - PAOScripts. TableFill. @INSERT_FLAG по-умолчанию должен быть равен 0.
 - PAOScripts. TableFill. Устранить ошибку выполнения скрипта.
-- PAOScripts. TablesClear. @@DELETE_FLAG по-умолчанию должен быть равен 0.
+- PAOScripts. TablesClear. @DELETE_FLAG по-умолчанию должен быть равен 0.
 - PAOScripts. TablesClear. Устранить ошибку выполнения скрипта.
 - CHANGELOG. Обновить.
 
