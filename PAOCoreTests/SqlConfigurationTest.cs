@@ -21,9 +21,7 @@ namespace PAOTests
             string executableLocation = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
             string jsonLocation = Path.Combine(executableLocation, "appsettings.json");
 
-            IConfiguration config = new ConfigurationBuilder()
-                .AddJsonFile(jsonLocation)
-                .Build();
+            IConfiguration config = new ConfigurationBuilder().AddJsonFile(jsonLocation).Build();
             JsonSettingsEntity jsonSettings = new (config);
             TestContext.WriteLine($"{jsonSettings}");
             
