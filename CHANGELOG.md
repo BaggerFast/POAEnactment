@@ -6,6 +6,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 -
+
+## [0.03.010] - 2022-02-24
+### Added
+- Microsoft.Data.SqlClient NuGet package
+- PAOCore: DAL.Models
+- PAOCore: DAL.TableModels
+- PAOCoreTests: DAL.TableModels.CompanyEntityTests
+
 ## [0.02.060] - 2022-02-09
 ### Added
 - PAOCoreTests v.0.02.060

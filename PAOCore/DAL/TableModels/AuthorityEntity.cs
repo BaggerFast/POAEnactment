@@ -1,15 +1,15 @@
 ﻿// This is an independent project of an individual developer. Dear PVS-Studio, please check it.
 // PVS-Studio Static Code Analyzer for C, C++, C#, and Java: http://www.viva64.com/
 
-using PAOСore;
+using PAOCore.DAL.Models;
 using System;
 
-namespace PAOCore.Models.Tables
+namespace PAOCore.DAL.TableModels
 {
     /// <summary>
     /// Таблица "Доверенность".
     /// </summary>
-    public class AuthorityEntity: BaseEntity
+    public class AuthorityEntity : BaseEntity
     {
         #region public and private fields and properties
 
@@ -32,7 +32,6 @@ namespace PAOCore.Models.Tables
 
         #endregion
 
-
         #region Public and private methods
 
         public override string ToString()
@@ -46,5 +45,4 @@ namespace PAOCore.Models.Tables
 
         #endregion
     }
-
 }

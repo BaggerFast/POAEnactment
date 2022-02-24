@@ -3,22 +3,22 @@
 
 using PAOCoreTests;
 using NUnit.Framework;
-using PAOCore.Models.Tables;
+using PAOCore.DAL.TableModels;
 
-namespace PAOTests
+namespace PAOCoreTests.DAL.TableModels
 {
     [TestFixture]
-    internal class PersonEntityTests
+    internal class AuthorityEntityTests
     {
         [Test]
-        public void PersonEntity_Ctor_DoesNotThrow()
+        public void AuthorityEntity_Ctor_DoesNotThrow()
         {
             TestsUtils.MethodStart();
 
             Assert.DoesNotThrow(() =>
             {
-                PersonEntity person = new();
-                TestContext.WriteLine($"{nameof(person).ToUpper()}: {person}");
+                AuthorityEntity authority = new();
+                TestContext.WriteLine($"{nameof(authority).ToUpper()}: {authority}");
             });
 
             TestsUtils.MethodComplete();

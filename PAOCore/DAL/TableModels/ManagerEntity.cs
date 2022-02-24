@@ -1,14 +1,14 @@
 // This is an independent project of an individual developer. Dear PVS-Studio, please check it.
 // PVS-Studio Static Code Analyzer for C, C++, C#, and Java: http://www.viva64.com/
 
-using PAOСore;
+using PAOCore.DAL.Models;
 
-namespace PAOCore.Models.Tables
+namespace PAOCore.DAL.TableModels
 {
     /// <summary>
     /// Таблица "Уполномоченное лицо".
     /// </summary>
-    public class ManagerEntity: BaseEntity
+    public class ManagerEntity : BaseEntity
     {
         #region public and private fields and properties
 
@@ -39,5 +39,4 @@ namespace PAOCore.Models.Tables
 
         #endregion
     }
-
 }

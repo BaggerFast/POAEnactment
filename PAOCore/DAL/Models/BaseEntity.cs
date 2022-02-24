@@ -3,8 +3,8 @@
 
 using System;
 
-namespace PAOСore
-{   
+namespace PAOCore.DAL.Models
+{
     /// <summary>
     /// Базовое представление модели базы данных.
     /// </summary>
@@ -15,7 +15,7 @@ namespace PAOСore
         /// <summary>
         /// Уникальный идентификатор (id).
         /// </summary>
-        public virtual Guid UID { get; set; }
+        public virtual Guid Uid { get; set; }
 
         #endregion
 
@@ -23,7 +23,7 @@ namespace PAOСore
 
         public override string ToString()
         {
-            return $"{nameof(UID)}: {UID}. ";
+            return $"{nameof(Uid)}: {Uid}. ";
         }
 
         #endregion

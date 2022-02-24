@@ -3,16 +3,16 @@
 
 using FluentNHibernate.Mapping;
 
-namespace PAOCore.Models.Tables
+namespace PAOCore.DAL.TableModels
 {
     public class AuthorityMap : ClassMap<AuthorityEntity>
     {
         public AuthorityMap()
         {
-            Table("[db_scales].[AUTHORITY]");
+            Table("[AUTHORITY]");
             LazyLoad();
 
-            Id(x => x.UID).CustomSqlType("UNIQUEIDENTIFIER").Column("UID").Unique().GeneratedBy.Guid().Not.Nullable();
+            Id(x => x.Uid).CustomSqlType("UNIQUEIDENTIFIER").Column("UID").Unique().GeneratedBy.Guid().Not.Nullable();
             Map(x => x.Start).CustomSqlType("DATE").Column("START_ISSUE").Not.Nullable();
             Map(x => x.End).CustomSqlType("DATE").Column("END_ISSUE").Not.Nullable();
             Map(x => x.Number).CustomSqlType("NVARCHAR(5)").Column("NUMBER").Length(5).Not.Nullable();

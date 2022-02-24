@@ -3,22 +3,22 @@
 
 using PAOCoreTests;
 using NUnit.Framework;
-using PAOCore.Models.Tables;
+using PAOCore.DAL.TableModels;
 
-namespace PAOTests
+namespace PAOCoreTests.DAL.TableModels
 {
     [TestFixture]
-    internal class CompanyEntityTests
+    internal class PassportEntityTests
     {
         [Test]
-        public void CompanyEntity_Ctor_DoesNotThrow()
+        public void PassportEntity_Ctor_DoesNotThrow()
         {
             TestsUtils.MethodStart();
 
             Assert.DoesNotThrow(() =>
             {
-                CompanyEntity company = new();
-                TestContext.WriteLine($"{nameof(company).ToUpper()}: {company}");
+                PassportEntity passport = new();
+                TestContext.WriteLine($"{nameof(passport).ToUpper()}: {passport}");
             });
 
             TestsUtils.MethodComplete();

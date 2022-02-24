@@ -1,5 +1,9 @@
 # To do list
 
+## 2022-02-24
+### Do it
+- SHARP-T-18. PAOCoreTests. Add tests for TableModels. Добавить тесты для всех таблиц.
+
 ## 2022-02-09
 ### Do it
 - SHARP-T-9. ORM Framework NHibernate & mapping FluentNHibernate

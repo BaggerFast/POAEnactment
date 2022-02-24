@@ -90,7 +90,7 @@ namespace PAOCore
         public bool IsValid()
         {
             Errors = new List<ValidationResult>();
-            ValidationContext context = new ValidationContext(this);
+            ValidationContext context = new(this);
             return Validator.TryValidateObject(this, context, Errors, true);
         }
 

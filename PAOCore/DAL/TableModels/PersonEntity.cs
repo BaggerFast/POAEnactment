@@ -1,9 +1,9 @@
 ﻿// This is an independent project of an individual developer. Dear PVS-Studio, please check it.
 // PVS-Studio Static Code Analyzer for C, C++, C#, and Java: http://www.viva64.com/
 
-using PAOСore;
+using PAOCore.DAL.Models;
 
-namespace PAOCore.Models.Tables
+namespace PAOCore.DAL.TableModels
 {
     /// <summary>
     /// Таблица "Директор компании"
@@ -15,15 +15,15 @@ namespace PAOCore.Models.Tables
         /// <summary>
         /// Имя.
         /// </summary>
-        public virtual string FirstName { get; set; }
+        public virtual string FirstName { get; set; } = string.Empty;
         /// <summary>
         /// Фамилия.
         /// </summary>
-        public virtual string LastName { get; set; }
+        public virtual string LastName { get; set; } = string.Empty;
         /// <summary>
         /// Отчество.
         /// </summary>
-        public virtual string MiddleName { get; set; }
+        public virtual string MiddleName { get; set; } = string.Empty;
         #endregion
 
         #region Public and private methods
@@ -38,5 +38,4 @@ namespace PAOCore.Models.Tables
 
         #endregion
     }
-
 }

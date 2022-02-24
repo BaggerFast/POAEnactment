@@ -3,17 +3,16 @@
 
 using FluentNHibernate.Mapping;
 
-
-namespace PAOCore.Models.Tables
+namespace PAOCore.DAL.TableModels
 {
     public class PassportMap : ClassMap<PassportEntity>
     {
         public PassportMap()
         {
-            Table("[db_scales].[PASSPORT]");
+            Table("[PASSPORT]");
             LazyLoad();
 
-            Id(x => x.UID).CustomSqlType("UNIQUEIDENTIFIER").Column("UID").Unique().GeneratedBy.Guid().Not.Nullable();
+            Id(x => x.Uid).CustomSqlType("UNIQUEIDENTIFIER").Column("UID").Unique().GeneratedBy.Guid().Not.Nullable();
             Map(x => x.Series).CustomSqlType("NVARCHAR(4)").Column("SERIES").Length(4).Not.Nullable();
             Map(x => x.Number).CustomSqlType("NVARCHAR(6)").Column("NUMBER").Length(6).Not.Nullable();
             Map(x => x.DateIssue).CustomSqlType("DATE").Column("DATE_ISSUE").Not.Nullable();
