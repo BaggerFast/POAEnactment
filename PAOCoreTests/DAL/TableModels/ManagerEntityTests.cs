@@ -23,5 +23,29 @@ namespace PAOCoreTests.DAL.TableModels
 
             TestsUtils.MethodComplete();
         }
+
+
+        [Test]
+        public void ManagerEntity_GetEntities_DoesNotThrow()
+        {
+            TestsUtils.MethodStart();
+
+            Assert.DoesNotThrow(() =>
+            {
+                if (TestsUtils.AppSettings.DataAccess != null)
+                {
+                    ManagerEntity[]? managers = TestsUtils.AppSettings.DataAccess.Crud.GetEntities<ManagerEntity>(null, null);
+                    if (managers != null)
+                    {
+                        foreach (ManagerEntity manager in managers)
+                        {
+                            TestContext.WriteLine($"{manager}");
+                        }
+                    }
+                }
+            });
+
+            TestsUtils.MethodComplete();
+        }
     }
 }

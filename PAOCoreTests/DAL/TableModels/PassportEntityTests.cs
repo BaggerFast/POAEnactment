@@ -23,5 +23,28 @@ namespace PAOCoreTests.DAL.TableModels
 
             TestsUtils.MethodComplete();
         }
+
+        [Test]
+        public void PassportEntity_GetEntities_DoesNotThrow()
+        {
+            TestsUtils.MethodStart();
+
+            Assert.DoesNotThrow(() =>
+            {
+                if (TestsUtils.AppSettings.DataAccess != null)
+                {
+                    PassportEntity[]? passports = TestsUtils.AppSettings.DataAccess.Crud.GetEntities<PassportEntity>(null, null);
+                    if (passports != null)
+                    {
+                        foreach (PassportEntity passport in passports)
+                        {
+                            TestContext.WriteLine($"{passport}");
+                        }
+                    }
+                }
+            });
+
+            TestsUtils.MethodComplete();
+        }
     }
 }

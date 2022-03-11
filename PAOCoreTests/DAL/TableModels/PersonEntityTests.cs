@@ -23,5 +23,28 @@ namespace PAOCoreTests.DAL.TableModels
 
             TestsUtils.MethodComplete();
         }
+
+        [Test]
+        public void PersonEntity_GetEntities_DoesNotThrow()
+        {
+            TestsUtils.MethodStart();
+
+            Assert.DoesNotThrow(() =>
+            {
+                if (TestsUtils.AppSettings.DataAccess != null)
+                {
+                    PersonEntity[]? persons = TestsUtils.AppSettings.DataAccess.Crud.GetEntities<PersonEntity>(null, null);
+                    if (persons != null)
+                    {
+                        foreach (PersonEntity person in persons)
+                        {
+                            TestContext.WriteLine($"{person}");
+                        }
+                    }
+                }
+            });
+
+            TestsUtils.MethodComplete();
+        }
     }
 }

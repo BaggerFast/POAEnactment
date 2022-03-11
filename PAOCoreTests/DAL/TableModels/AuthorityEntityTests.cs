@@ -23,5 +23,28 @@ namespace PAOCoreTests.DAL.TableModels
 
             TestsUtils.MethodComplete();
         }
+
+        [Test]
+        public void AuthorityEntity_GetEntities_DoesNotThrow()
+        {
+            TestsUtils.MethodStart();
+
+            Assert.DoesNotThrow(() =>
+            {
+                if (TestsUtils.AppSettings.DataAccess != null)
+                {
+                    AuthorityEntity[]? authorities = TestsUtils.AppSettings.DataAccess.Crud.GetEntities<AuthorityEntity>(null, null);
+                    if (authorities != null)
+                    {
+                        foreach (AuthorityEntity authority in authorities)
+                        {
+                            TestContext.WriteLine($"{authority}");
+                        }
+                    }
+                }
+            });
+
+            TestsUtils.MethodComplete();
+        }
     }
 }
