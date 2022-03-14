@@ -115,7 +115,22 @@ namespace PAOCore.DAL.Models
                     if (company.Director != null)
                         company.Director = GetEntity<PersonEntity>(company.Director.Uid);
                     break;
-                //
+                case AddressEntity address:
+                    if (address.Company != null)
+                        address.Company = GetEntity<CompanyEntity>(address.Company.Uid);
+                    break;
+                case AuthorityEntity autority:
+                    if (autority.Company != null)
+                        autority.Company = GetEntity<CompanyEntity>(autority.Company.Uid);
+                    break;
+                case ManagerEntity manager:
+                    if (manager.Fio != null)
+                        manager.Fio = GetEntity<PersonEntity>(manager.Fio.Uid);
+                    break;
+                case PassportEntity passport:
+                    if (passport.Manager != null)
+                        passport.Manager = GetEntity<ManagerEntity>(passport.Manager.Uid);
+                    break;
             }
         }
 

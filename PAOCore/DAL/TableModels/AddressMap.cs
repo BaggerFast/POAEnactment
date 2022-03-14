@@ -23,8 +23,7 @@ namespace PAOCore.DAL.TableModels
             Map(x => x.Housing).CustomSqlType("NVARCHAR(4)").Column("HOUSING").Length(4).Nullable();
             Map(x => x.Apartment).CustomSqlType("NVARCHAR(3)").Column("APARTMENT").Length(3).Not.Nullable();
 
-            //References(x => x.Company).Column("COMPANY_UID").Not.Nullable().Unique();
-            References(x => x.Company).Column("COMPANY_UID").Not.Nullable();
+            References(x => x.Company).Column("COMPANY_UID").Not.Nullable().Unique();
         }
     }
 }
