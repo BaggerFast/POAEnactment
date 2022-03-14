@@ -11,6 +11,12 @@ namespace PAOCoreTests.DAL.TableModels
     [TestFixture]
     internal class AddressEntityTests
     {
+
+        public AddressEntityTests()
+        {
+            TestsUtils.Setup();
+        }
+
         [Test]
         public void AddressEntity_Ctor_DoesNotThrow()
         {
@@ -24,7 +30,6 @@ namespace PAOCoreTests.DAL.TableModels
 
             TestsUtils.MethodComplete();
         }
-
 
         [Test]
         public void AddressEntity_GetEntities_DoesNotThrow()

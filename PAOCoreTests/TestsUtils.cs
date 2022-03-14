@@ -36,9 +36,7 @@ namespace PAOCoreTests
                 { "sql:schema", "dbo" },
                 { "sql:trustservercertificate", "true" },
             };
-            IConfiguration Configuration = new ConfigurationBuilder()
-                .AddInMemoryCollection(inMemorySettings)
-                .Build();
+            IConfiguration Configuration = new ConfigurationBuilder().AddInMemoryCollection(inMemorySettings).Build();
             JsonSettingsEntity jsonSettings = new(Configuration);
             AppSettings.SetupJsonSettings(jsonSettings);
         }
