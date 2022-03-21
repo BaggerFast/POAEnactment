@@ -18,19 +18,6 @@ namespace PAOCoreTests.DAL.TableModels
             TestsUtils.Setup();
         }
 
-        private AddressEntity? GetTestAddress()
-        {
-            if (TestsUtils.AppSettings.DataAccess != null)
-            {
-                AddressEntity? address = TestsUtils.AppSettings.DataAccess.Crud.GetEntity<AddressEntity>(
-                    new FieldListEntity(new Dictionary<string, object> { { "Company.name", "���������������� �����������" } }), null);
-                if (address != null)
-                    return address;
-                TestContext.WriteLine($"�������� ������ ����������");
-            }
-            return null;
-        }
-
         [Test]
         public void AddressEntity_Ctor_DoesNotThrow()
         {
@@ -71,10 +58,16 @@ namespace PAOCoreTests.DAL.TableModels
 
             Assert.DoesNotThrow(() =>
             {
-                AddressEntity? address = GetTestAddress();
-                if (address != null)
-                    TestContext.WriteLine($"{address}");
-
+                AddressEntity? address = null;
+                if (TestsUtils.AppSettings.DataAccess != null)
+                {
+                    address = TestsUtils.AppSettings.DataAccess.Crud.GetEntity<AddressEntity>(
+                        //new FieldListEntity(new Dictionary<string, object?> { { "COMPANY.INN", "123456789" } }), 
+                        new FieldListEntity(new Dictionary<string, object?> { { "Index", "600018" } }),
+                        null);
+                    if (address != null)
+                        TestContext.WriteLine($"{address}");
+                }
             });
             TestsUtils.MethodComplete();
         }
