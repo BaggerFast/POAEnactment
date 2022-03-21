@@ -46,5 +46,17 @@ namespace PAOCoreTests.DAL.TableModels
 
             TestsUtils.MethodComplete();
         }
+
+        [Test]
+        public void PersonEntity_SaveEntities_DoesNotThrow()
+        {
+            TestsUtils.MethodStart();
+
+            Assert.DoesNotThrow(() =>
+            {
+            });
+
+            TestsUtils.MethodComplete();
+        }
     }
 }

@@ -273,10 +273,6 @@ namespace PAOCore.DAL.Models
         {
             switch (item)
             {
-                case AddressEntity address:
-                    ExecuteTransaction((session) => { session.SaveOrUpdate(address); }, filePath, lineNumber, memberName);
-                    break;
-                //
                 default:
                     ExecuteTransaction((session) => { session.SaveOrUpdate(item); }, filePath, lineNumber, memberName);
                     break;

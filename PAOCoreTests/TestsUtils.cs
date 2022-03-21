@@ -5,6 +5,7 @@ using Microsoft.Extensions.Configuration;
 using NUnit.Framework;
 using PAOCore.DAL.Models;
 using PAOCore.Models;
+using System;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 
@@ -52,6 +53,23 @@ namespace PAOCoreTests
         {
             TestContext.WriteLine();
             TestContext.WriteLine($@"{memberName} complete.");
+        }
+
+        // ��������� ��������� ��������.
+        public static string RandomizeText(int strLength)
+        {
+            char[] letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".ToCharArray();
+            string word = "";
+
+            Random rand = new Random();
+            
+            for (int i = 0; i < strLength; ++i)
+            {
+
+                int letter_num = rand.Next(0, letters.Length - 1);
+                word += letters[letter_num];
+            }
+            return word;
         }
 
         #endregion
