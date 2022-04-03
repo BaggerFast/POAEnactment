@@ -55,8 +55,7 @@ namespace PAOCoreTests
             TestContext.WriteLine($@"{memberName} complete.");
         }
 
-        // ��������� ��������� ��������.
-        public static string RandomizeText(int strLength)
+        public static string GetRandomText(int strLength)
         {
             char[] letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".ToCharArray();
             string word = "";

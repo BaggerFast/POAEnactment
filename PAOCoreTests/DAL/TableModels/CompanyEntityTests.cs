@@ -58,7 +58,7 @@ namespace PAOCoreTests.DAL.TableModels
             if (TestsUtils.AppSettings.DataAccess != null)
             {
                 company = TestsUtils.AppSettings.DataAccess.Crud.GetEntity<CompanyEntity>(
-                    new FieldListEntity(new Dictionary<string, object> { { "Name", "Владимирскииииий стандартттт" } }), null);
+                    new FieldListEntity(new Dictionary<string, object?> { { "Name", "Владимирскииииий стандартттт" } }), null);
             }
 
             Assert.IsTrue(company != null);

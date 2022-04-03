@@ -59,7 +59,7 @@ namespace PAOCoreTests.DAL.TableModels
             if (TestsUtils.AppSettings.DataAccess != null)
             {
                 manager = TestsUtils.AppSettings.DataAccess.Crud.GetEntity<ManagerEntity>(
-                    new FieldListEntity(new Dictionary<string, object> { { "Phone", "89004930393" } }), null);
+                    new FieldListEntity(new Dictionary<string, object?> { { "Phone", "89004930393" } }), null);
             }
 
             Assert.IsTrue(manager != null);
