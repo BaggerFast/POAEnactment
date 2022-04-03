@@ -96,7 +96,7 @@ namespace PAOCore.DAL.Models
             return session.CreateSQLQuery(query);
         }
 
-        public T[] GetEntitiesWithoutReferences<T>(FieldListEntity fieldList, FieldOrderEntity? order, int maxResults,
+        public T[] GetEntitiesWithoutReferences<T>(FieldListEntity? fieldList, FieldOrderEntity? order, int maxResults,
             string filePath, int lineNumber, string memberName) where T : BaseEntity, new()
         {
             T[] result = new T[0];
@@ -152,14 +152,14 @@ namespace PAOCore.DAL.Models
         public T GetEntity<T>(long id) where T : BaseEntity, new()
         {
             return GetEntity<T>(
-                new FieldListEntity(new Dictionary<string, object> { { ShareEnums.DbField.Id.ToString(), id } }),
+                new FieldListEntity(new Dictionary<string, object?> { { ShareEnums.DbField.Id.ToString(), id } }),
                 new FieldOrderEntity(ShareEnums.DbField.Id, ShareEnums.DbOrderDirection.Desc));
         }
 
         public T GetEntity<T>(Guid uid) where T : BaseEntity, new()
         {
             return GetEntity<T>(
-                new FieldListEntity(new Dictionary<string, object> { { ShareEnums.DbField.Uid.ToString(), uid } }),
+                new FieldListEntity(new Dictionary<string, object?> { { ShareEnums.DbField.Uid.ToString(), uid } }),
                 new FieldOrderEntity(ShareEnums.DbField.Uid, ShareEnums.DbOrderDirection.Desc));
         }
 

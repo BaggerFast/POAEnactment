@@ -15,43 +15,43 @@ namespace PAOCore.DAL.TableModels
         /// <summary>
         /// Индекс.
         /// </summary>
-        public virtual string Index { get; set; }
+        public virtual string Index { get; set; } = string.Empty;
         /// <summary>
         /// Код региона.
         /// </summary>
-        public virtual string CodeRegion { get; set; }
+        public virtual string CodeRegion { get; set; } = string.Empty;
         /// <summary>
         /// Район.
         /// </summary>
-        public virtual string District { get; set; }
+        public virtual string District { get; set; } = string.Empty;
         /// <summary>
         /// Город.
         /// </summary>
-        public virtual string City { get; set; }
+        public virtual string City { get; set; } = string.Empty;
         /// <summary>
         /// Населенный пункт.
         /// </summary>
-        public virtual string Settlement { get; set; }
+        public virtual string Settlement { get; set; } = string.Empty;
         /// <summary>
         /// Улица.
         /// </summary>
-        public virtual string Street { get; set; }
+        public virtual string Street { get; set; } = string.Empty;
         /// <summary>
         /// Дом.
         /// </summary>
-        public virtual string Build { get; set; }
+        public virtual string Build { get; set; } = string.Empty;
         /// <summary>
         /// Корпус.
         /// </summary>
-        public virtual string Housing { get; set; }
+        public virtual string Housing { get; set; } = string.Empty;
         /// <summary>
         /// Квартира.
         /// </summary>
-        public virtual string Apartment { get; set; }
+        public virtual string Apartment { get; set; } = string.Empty;
         /// <summary>
         /// Компания.
         /// </summary>
-        public virtual CompanyEntity Company { get; set; }
+        public virtual CompanyEntity Company { get; set; } = new CompanyEntity();
 
         #endregion
 
