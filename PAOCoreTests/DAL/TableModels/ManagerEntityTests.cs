@@ -4,7 +4,6 @@
 using NUnit.Framework;
 using PAOCore.DAL.Models;
 using PAOCore.DAL.TableModels;
-using PAOCoreTests;
 using System.Collections.Generic;
 
 namespace PAOCoreTests.DAL.TableModels
@@ -12,20 +11,6 @@ namespace PAOCoreTests.DAL.TableModels
     [TestFixture]
     internal class ManagerEntityTests
     {
-        private ManagerEntity? GetTestManager()
-        {
-            if (TestsUtils.AppSettings.DataAccess != null)
-            {
-                ManagerEntity? manager = TestsUtils.AppSettings.DataAccess.Crud.GetEntity<ManagerEntity>(
-                    new FieldListEntity(new Dictionary<string, object> { { "Phone", "89004930393" } }), null);
-                if (manager != null)
-                    return manager;
-                else
-                    TestContext.WriteLine($"Тестовые данные отсутсвуют");
-            }
-            return null;
-        }
-
         [Test]
         public void ManagerEntity_Ctor_DoesNotThrow()
         {
@@ -64,18 +49,23 @@ namespace PAOCoreTests.DAL.TableModels
         }
 
         [Test]
-        public void ManagerEntity_GetEntitiesWithFilter_DoesNotThrow()
+        public void ManagerEntity_GetTestEntity()
         {
+
             TestsUtils.MethodStart();
 
-            Assert.DoesNotThrow(() =>
-            {
-                ManagerEntity? manager = GetTestManager();
-                if (manager != null)
-                    TestContext.WriteLine($"{manager}");
+            ManagerEntity? manager = null;
 
-            });
+            if (TestsUtils.AppSettings.DataAccess != null)
+            {
+                manager = TestsUtils.AppSettings.DataAccess.Crud.GetEntity<ManagerEntity>(
+                    new FieldListEntity(new Dictionary<string, object> { { "Phone", "89004930393" } }), null);
+            }
+
+            Assert.IsTrue(manager != null);
+
             TestsUtils.MethodComplete();
         }
+
     }
 }

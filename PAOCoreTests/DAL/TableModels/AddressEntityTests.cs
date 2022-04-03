@@ -3,9 +3,7 @@
 
 
 using NUnit.Framework;
-using PAOCore.DAL.Models;
 using PAOCore.DAL.TableModels;
-using System.Collections.Generic;
 
 namespace PAOCoreTests.DAL.TableModels
 {
@@ -16,19 +14,6 @@ namespace PAOCoreTests.DAL.TableModels
         public AddressEntityTests()
         {
             TestsUtils.Setup();
-        }
-
-        private AddressEntity? GetTestAddress()
-        {
-            if (TestsUtils.AppSettings.DataAccess != null)
-            {
-                AddressEntity? address = TestsUtils.AppSettings.DataAccess.Crud.GetEntity<AddressEntity>(
-                    new FieldListEntity(new Dictionary<string, object> { { "Company.name", "���������������� �����������" } }), null);
-                if (address != null)
-                    return address;
-                TestContext.WriteLine($"�������� ������ ����������");
-            }
-            return null;
         }
 
         [Test]
@@ -64,20 +49,6 @@ namespace PAOCoreTests.DAL.TableModels
             TestsUtils.MethodComplete();
         }
 
-        [Test]
-        public void AddressEntity_GetEntitiesWithFilter_DoesNotThrow()
-        {
-            TestsUtils.MethodStart();
-
-            Assert.DoesNotThrow(() =>
-            {
-                AddressEntity? address = GetTestAddress();
-                if (address != null)
-                    TestContext.WriteLine($"{address}");
-
-            });
-            TestsUtils.MethodComplete();
-        }
     }
 
 }

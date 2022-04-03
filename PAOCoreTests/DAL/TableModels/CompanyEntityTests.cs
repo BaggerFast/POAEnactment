@@ -11,20 +11,6 @@ namespace PAOCoreTests.DAL.TableModels
     [TestFixture]
     internal class CompanyEntityTests
     {
-        private CompanyEntity? GetTestCompany()
-        {
-            if (TestsUtils.AppSettings.DataAccess != null)
-            {
-                CompanyEntity? company = TestsUtils.AppSettings.DataAccess.Crud.GetEntity<CompanyEntity>(
-                    new FieldListEntity(new Dictionary<string, object> { { "Name", "Владимирскииииий стандартттт" } }), null);
-                if (company != null)
-                    return company;
-                else 
-                    TestContext.WriteLine($"Тестовые данные отсутсвуют");
-            }
-            return null;
-        }
-
         [Test]
         public void CompanyEntity_Ctor_DoesNotThrow()
         {
@@ -63,36 +49,19 @@ namespace PAOCoreTests.DAL.TableModels
         }
 
         [Test]
-        public void ComapanyEntity_GetEntitiesWithFilter_DoesNotThrow()
+        public void CompanyEntity_GetTestEntity()
         {
             TestsUtils.MethodStart();
 
-            Assert.DoesNotThrow(() =>
-            {
-                CompanyEntity? company = GetTestCompany();
-                if (company != null)
-                    TestContext.WriteLine($"{company}");
+            CompanyEntity? company = null;
 
-            });
-            TestsUtils.MethodComplete();
-        }
-
-        [Test]
-        public void CompanyEntity_ChangedEntitiesSave_IsValid()
-        {
-            TestsUtils.MethodStart();
             if (TestsUtils.AppSettings.DataAccess != null)
             {
-                CompanyEntity? oldCompany = GetTestCompany();
+                company = TestsUtils.AppSettings.DataAccess.Crud.GetEntity<CompanyEntity>(
+                    new FieldListEntity(new Dictionary<string, object> { { "Name", "Владимирскииииий стандартттт" } }), null);
+            }
 
-                if (oldCompany == null) return;
-
-                oldCompany.Kpp = TestsUtils.RandomizeText(9);
-                TestsUtils.AppSettings.DataAccess.Crud.UpdateEntity(oldCompany);
-                CompanyEntity? actualCompany = GetTestCompany();
-
-                if (actualCompany != null) Assert.IsTrue(oldCompany.Kpp == actualCompany.Kpp);
-            }                                        
+            Assert.IsTrue(company != null);
 
             TestsUtils.MethodComplete();
         }
